@@ -5,15 +5,15 @@
   "main": "index.js",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/NIHILncunia/ReactGatsbySetting.git"
+    "url": "git+https://github.com/NIHILncunia/gatsby-training.git"
   },
   "bugs": {
-    "url": "https://github.com/NIHILncunia/ReactGatsbySetting/issues"
+    "url": "https://github.com/NIHILncunia/gatsby-training/issues"
   },
-  "homepage": "https://github.com/NIHILncunia/ReactGatsbySetting#readme",
+  "homepage": "https://github.com/NIHILncunia/gatsby-training#readme",
   "scripts": {
     "build": "gatsby clean && gatsby build",
-    "serve": "gatsby develop",
+    "serve": "gatsby clean && gatsby develop",
     "clean": "gatsby clean"
   },
   "keywords": [],

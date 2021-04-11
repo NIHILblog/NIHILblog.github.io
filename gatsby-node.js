@@ -1,4 +1,5 @@
 const path = require('path');
+const { createFilePath, } = require('gatsby-source-filesystem');
 
 exports.onCreateWebpackConfig = ({ actions, }) => {
   actions.setWebpackConfig({
@@ -19,4 +20,57 @@ exports.onCreateWebpackConfig = ({ actions, }) => {
       },
     },
   });
+};
+
+exports.createPages = ({ actions, graphql, }) => {
+  const { createPage, } = actions;
+  const BlogPostTemplate = path.resolve('src/templates/BlogPostTemplate.jsx');
+
+  return graphql(`
+    {
+      allMdx {
+        nodes {
+          slug
+          frontmatter {
+            category
+            createdAt
+            description
+            keywords
+            tag
+            title
+            updatedAt
+          }
+        }
+      }
+    } 
+  `).then(result => {
+    if (result.errors) {
+      throw result.errors;
+    }
+
+    const posts = result.data.allMdx.nodes;
+
+    posts.forEach(post => {
+      createPage({
+        path: post.slug,
+        component: BlogPostTemplate,
+        context: {
+          slug: post.slug,
+        },
+      });
+    });
+  });
+};
+
+exports.onCreateNode = ({ node, actions, getNode, }) => {
+  const { createNodeField, } = actions;
+
+  if (node.internal.type === 'mdx') {
+    const value = createFilePath({ node, getNode, });
+    createNodeField({
+      name: 'slug',
+      node,
+      value,
+    });
+  }
 };
