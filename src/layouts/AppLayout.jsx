@@ -1,23 +1,49 @@
 import React from 'react';
 import { Helmet } from 'react-helmet';
-import PropTypes from 'prop-types';
-import NavContainer from '@components/NavContainer';
 import FooterContainer from '@components/FooterContainer';
-import { useSiteMetaDataQuery } from '@hooks/useQuery';
+import { useSiteMetaDataQuery } from '@hooks/useSiteMetaDataQuery';
 import HeaderContainer from '@components/HeaderContainer';
+import { Global } from '@emotion/react';
+import GlobalStyle from '@styles/GlobalStyle';
+import NavContainer from '@components/NavContainer';
 
-const AppLayout = ({ children, pageName, pageDescription, pageKeywords, }) => {
-  const { title, generator, author, } = useSiteMetaDataQuery();
+const AppLayout = ({ children, pageName, pageDescription, pageKeywords, pageUrl, pageType, }) => {
+  const { title, generator, author, url, } = useSiteMetaDataQuery();
 
   return (
     <>
+      <Global styles={GlobalStyle} />
       {/* head 태그 수정 */}
       <Helmet>
+        {/* 기본 메타태그 */}
         <title>{ `${pageName}` } - { title }</title>
         <meta name='description' content={pageDescription} />
         <meta name='author' content={author} />
         <meta name='generator' content={generator} />
         <meta name='keywords' content={pageKeywords} />
+
+        <link rel='shortcut icon' href='/favicon.ico' type='image/x-icon' />
+        <link rel='icon' href='/favicon.ico' type='image/x-icon' />
+        <link rel='stylesheet' href='https://use.fontawesome.com/releases/v5.15.1/css/all.css' integrity='sha384-vp86vTRFVJgpjF9jiIGPEEqYqlDwgyBgEF109VFjmqGmIY/Y4HV4d3Gp2irVfcrp' crossOrigin='anonymous' />
+
+        {/* 오픈그래프 */}
+        <meta property='og:site_name' content={title} />
+        <meta property='og:type' content={pageType} />
+        <meta property='og:title' content={pageName} />
+        <meta property='og:description' content={pageDescription} />
+        {/* <meta property='og:image' content={pageImage} /> */}
+        <meta property='og:locale' content='ko_KR' />
+        <meta property='og:url' content={`${url}${pageUrl}`} />
+
+        {/* 트위터 카드 */}
+        <meta name='twitter:card' content='summary_large_image' />
+        <meta name='twitter:site' content={`@${author}`} />
+        <meta name='twitter:title' content={`${pageName} - ${title}`} />
+        <meta name='twitter:creator' content={`@${author}`} />
+        <meta name='twitter:description' content={pageDescription} />
+        {/* <meta name='twitter:image' content={pageImage} /> */}
+
+        {/* 검색등록 */}
       </Helmet>
 
       {/* 헤더 */}
@@ -33,13 +59,6 @@ const AppLayout = ({ children, pageName, pageDescription, pageKeywords, }) => {
       <FooterContainer />
     </>
   );
-};
-
-AppLayout.propTypes = {
-  children: PropTypes.node.isRequired,
-  pageName: PropTypes.string.isRequired,
-  pageDescription: PropTypes.string.isRequired,
-  pageKeywords: PropTypes.string.isRequired,
 };
 
 export default AppLayout;

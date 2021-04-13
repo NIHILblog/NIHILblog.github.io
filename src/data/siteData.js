@@ -1,4 +1,6 @@
+import packageJson from '../../package.json';
+
 export default {
-  version: 'v1.0.0',
+  version: packageJson.version,
   year: new Date().getFullYear(),
 };
