@@ -7,24 +7,27 @@ const NavContainer = () => {
     width: 100%;
     box-sizing: border-box;
     text-align: center;
-    margin-bottom: 100px;
+    margin-bottom: 50px;
+    background-color: #333333;
+    padding: 10px;
     
     & > span {
       & > a {
         transition: all 0.3s;
         box-sizing: border-box;
         display: inline-block;
-        color: #333333;
-        background-color: #ffffff;
+        color: #ffffff;
+        background-color: #333333;
+        border: 2px solid #ffffff;
         border-radius: 20px;
         padding: 5px 10px;
-        box-shadow: 0px 0px 10px -4px #333333;
+        box-shadow: 0px 0px 10px -4px #ffffff;
         margin: 2px;
 
         &:hover {
           transition: all 0.3s;
-          color: #ffffff;
-          background-color: #333333;
+          color: #333333;
+          background-color: #ffffff;
         }
       }
     }
@@ -37,13 +40,16 @@ const NavContainer = () => {
           <Link to='/'><i className='fas fa-home' /> 홈</Link>
         </span>
         <span id='link-about'>
-          <Link to='/about/'><i className='fas fa-info-circle' /> 블로그 소개</Link>
+          <Link to='/about/'><i className='fas fa-info-circle' /> 소개</Link>
+        </span>
+        <span id='link-notice-page'>
+          <Link to='/notice/page/1'><i className='fas fa-bell' /> 공지</Link>
         </span>
         <span id='link-page'>
-          <Link to='/page/1'><i className='fas fa-archive' /> 포스트 목록</Link>
+          <Link to='/page/1'><i className='fas fa-align-justify' /> 포스트</Link>
         </span>
         <span id='link-category'>
-          <Link to='/categories/'><i className='fas fa-folder-open' /> 카테고리</Link>
+          <Link to='/categories/'><i className='fas fa-folder' /> 카테고리</Link>
         </span>
         <span id='link-tag'>
           <Link to='/tags/'><i className='fas fa-tags' /> 태그</Link>

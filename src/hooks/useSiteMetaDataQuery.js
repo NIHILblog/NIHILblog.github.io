@@ -6,10 +6,11 @@ export const useSiteMetaDataQuery = () => {
       site {
         siteMetadata {
           author
-          description
           generator
+          description
           title
           url
+          keywords
         }
       }
     }

@@ -1,10 +1,10 @@
-import React from 'react';
+import AppLayout from '@layouts/AppLayout';
 import { graphql, Link } from 'gatsby';
 import { MDXRenderer } from 'gatsby-plugin-mdx';
-import AppLayout from '@layouts/AppLayout';
+import React from 'react';
 import { Helmet } from 'react-helmet';
 
-const BlogPostTemplate = ({ data, pageContext, }) => {
+const BlogNoticeTemplate = ({ data, pageContext, }) => {
   const { frontmatter, body, slug, excerpt, } = data.mdx;
   const { prev, next, } = pageContext;
 
@@ -15,7 +15,7 @@ const BlogPostTemplate = ({ data, pageContext, }) => {
     pageUrl: `/${slug}`,
     pageType: 'article',
   };
-  
+
   return (
     <>
       <Helmet>
@@ -31,7 +31,7 @@ const BlogPostTemplate = ({ data, pageContext, }) => {
       <AppLayout {...siteData}>
         <article id='blog-post-page'>
           <div id='post-metadata'>
-            <h2 id='content-title'><i className='fas fa-comment-alt' /> {frontmatter.title}</h2>
+            <h2 id='content-title'><i className='fas fa-bell' /> {frontmatter.title}</h2>
             <div className='content-data'>
               <span className='item-name'><i className='far fa-clock' /> 작성 날짜</span>
               <time dateTime={frontmatter.createdAt}>{frontmatter.createString}</time>
@@ -40,26 +40,6 @@ const BlogPostTemplate = ({ data, pageContext, }) => {
               <span className='item-name'><i className='far fa-clock' /> 수정 날짜</span>
               <time dateTime={frontmatter.updatedAt}>{frontmatter.updateString}</time>
             </div>
-            <p className='content-data'>
-              <span className='item-name'><i className='fas fa-folder-open' /> 카테고리</span>
-              <span className='item-items-list'>
-                {frontmatter.category.map((item, index) => (
-                  <Link to={`/categories/${item}`} className='list-item' key={index}>
-                    <i className='fas fa-folder-open' /> {item}
-                  </Link>
-                ))}
-              </span>
-            </p>
-            <p className='content-data'>
-              <span className='item-name'><i className='fas fa-tags' /> 태그</span>
-              <span className='item-items-list'>
-                {frontmatter.tag.map((item, index) => (
-                  <Link to={`/tags/${item}`} className='list-item' key={index}>
-                    <i className='fas fa-tag' /> {item}
-                  </Link>
-                ))}
-              </span>
-            </p>
           </div>
           <div id='post-content'>
             <MDXRenderer>
@@ -95,7 +75,7 @@ const BlogPostTemplate = ({ data, pageContext, }) => {
 };
 
 export const query = graphql`
-  query SLUG($slug: String!) {
+  query NOTICE_SLUG($slug: String!) {
     mdx(slug: {eq: $slug}) {
       frontmatter {
         category
@@ -113,4 +93,4 @@ export const query = graphql`
   }
 `;
 
-export default BlogPostTemplate;
+export default BlogNoticeTemplate;

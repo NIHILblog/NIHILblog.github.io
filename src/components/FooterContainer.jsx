@@ -8,7 +8,7 @@ const FooterContainer = () => {
     box-shadow: 0px 0px 10px -4px #333333;
     padding: 10px;
     text-align: center;
-    margin-top: 100px;
+    margin-top: 50px;
     box-sizing: border-box;
 
     & > #footer-copyright {
@@ -16,6 +16,8 @@ const FooterContainer = () => {
       
       & > .small-text {
         color: #ffffff;
+        font-weight: 500;
+        transition: all 0.3s;
       }
     }
 
@@ -46,19 +48,23 @@ const FooterContainer = () => {
         <div id='footer-link'>
           <span id='link-email'>
             <a href='mailto:nihil_ncunia@naver.com' target='_blank' rel='noreferrer noopener'>
-              <i className='fas fa-at' /> 이메일
+              <i className='fas fa-envelope' />
             </a>
           </span>
           <span id='link-instagram'>
             <a href='https://www.instagram.com/nihil_illust/' target='_blank' rel='noreferrer noopener'>
-              <i className='fab fa-instagram' /> 인스타그램
+              <i className='fab fa-instagram' />
+            </a>
+          </span>
+          <span id='link-github'>
+            <a href='https://github.com/NIHILncunia' target='_blank' rel='noreferrer noopener'>
+              <i className='fab fa-github' />
             </a>
           </span>
         </div>
         <div id='footer-copyright'>
-          <p className='small-text'>{ siteData.year }. NIHILncunia.</p>
+          <p className='small-text'><i className='fas fa-copyright' /> { siteData.year }. NIHILncunia.</p>
         </div>
-        
       </footer>
     </>
   );

@@ -32,9 +32,9 @@ const PrismPre = (props) => {
         {({ className, style, tokens, getLineProps, getTokenProps, }) => (
           <>
             <div className='code-highlight-block'>
-              <LanguageLabel>{capitalizeLang}</LanguageLabel>
+              <LanguageLabel codeLang={capitalizeLang}>{capitalizeLang}</LanguageLabel>
               <PreContainer className={className} style={style}>
-                <CopyCode onClick={onClickCopy} onMouseLeave={onMouseLeaveCopy}>{word}</CopyCode>
+                <CopyCode onClick={onClickCopy} onMouseLeave={onMouseLeaveCopy}><i className='fas fa-clone' /> {word}</CopyCode>
                 {tokens.map((line, i) => (
                   <Line key={i} {...getLineProps({ line, key: i, })}>
                     <LineNumber>{i + 1}</LineNumber>

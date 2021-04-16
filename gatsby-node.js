@@ -1,5 +1,6 @@
 const path = require('path');
 const { createFilePath, } = require('gatsby-source-filesystem');
+const fs = require('fs');
 
 exports.onCreateWebpackConfig = ({ actions, }) => {
   actions.setWebpackConfig({
@@ -26,28 +27,29 @@ exports.onCreateWebpackConfig = ({ actions, }) => {
 
 exports.createPages = async ({ actions, graphql, }) => {
   const { createPage, } = actions;
+
   const BlogPostTemplate = path.resolve('src/templates/BlogPostTemplate.jsx');
   const BlogTagsTemplate = path.resolve('src/templates/BlogTagsTemplate.jsx');
   const BlogCategoriesTemplate = path.resolve('src/templates/BlogCategoriesTemplate.jsx');
   const BlogPostsTemplate = path.resolve('src/templates/BlogPostsTemplate.jsx');
 
+  const SingleTagTemplate = path.resolve('src/templates/SingleTagTemplate.jsx');
+  const SingleCategoryTemplate = path.resolve('src/templates/SingleCategoryTemplate.jsx');
+
+  const BlogNoticeTemplate = path.resolve('src/templates/BlogNoticeTemplate.jsx');
+  const BlogNoticeListTemplate = path.resolve('src/templates/BlogNoticeListTemplate.jsx');
+
   const result = await graphql(`
     {
       allMdx(
         sort: {fields: frontmatter___createdAt, order: DESC}
-        filter: {frontmatter: {display: {eq: true}}}
+        filter: {frontmatter: {notice: {nin: true}, display: {eq: true}}}
       ) {
         nodes {
-          frontmatter {
-            category
-            createdAt
-            description
-            tag
-            title
-            updatedAt
-          }
-          id
           slug
+          frontmatter {
+            title
+          }
         }
       }
     }
@@ -114,67 +116,119 @@ exports.createPages = async ({ actions, graphql, }) => {
       },
     });
   });
+
+  const TagAndCategoryData = await graphql(`
+    {
+      tags: allMdx {
+        group(field: frontmatter___tag) {
+          fieldValue
+        }
+      }
+
+      categories: allMdx {
+        group(field: frontmatter___category) {
+          fieldValue
+        }
+      }
+    }
+  `);
+
+  if (TagAndCategoryData.error) {
+    throw TagAndCategoryData.error;
+  }
+
+  const tags = TagAndCategoryData.data.tags.group;
+  const categories = TagAndCategoryData.data.categories.group;
+
+  tags.forEach((tag) => {
+    createPage({
+      path: `/tags/${tag.fieldValue}`,
+      component: SingleTagTemplate,
+      context: {
+        tag: tag.fieldValue,
+      },
+    });
+  });
+
+  categories.forEach((category) => {
+    createPage({
+      path: `/categories/${category.fieldValue}`,
+      component: SingleCategoryTemplate,
+      context: {
+        category: category.fieldValue,
+      },
+    });
+  });
+
+  const noticeQuery = await graphql(`
+    {
+      allMdx(
+        filter: {frontmatter: {notice: {nin: false, in: true}}}
+        sort: {fields: frontmatter___createdAt, order: DESC}
+      ) {
+        nodes {
+          slug
+          frontmatter {
+            title
+          }
+        }
+      }
+    }
+  `);
+
+  if (noticeQuery.error) {
+    throw noticeQuery.error;
+  }
+
+  const noticeList = noticeQuery.data.allMdx.nodes;
+  
+  noticeList.forEach((post, index) => {
+    const prev = index === post.length - 1 ? null : noticeList[index + 1];
+    const next = index === 0 ? null : noticeList[index - 1];
+
+    createPage({
+      path: post.slug,
+      component: BlogNoticeTemplate,
+      context: {
+        slug: post.slug,
+        prev,
+        next,
+      },
+    });
+  });
+
+  const { data: noticeData, error: noticeError, } = await graphql(`
+    {
+      allMdx(
+        sort: {fields: frontmatter___createdAt, order: DESC}
+        filter: {frontmatter: {notice: {nin: false}}}
+      ) {
+        totalCount
+      }
+    }
+  `);
+
+  if (noticeError) {
+    throw noticeError;
+  }
+
+  const { totalCount: noticeTotalCount, } = noticeData.allMdx;
+  const noticePerPage = 5;
+  const noticeNumPages = Math.ceil(noticeTotalCount / noticePerPage);
+
+  Array.from({ length: noticeNumPages, }).forEach((_, index) => {
+    createPage({
+      path: index === 0 ? `/notice/page/1` : `/notice/page/${index + 1}`,
+      component: BlogNoticeListTemplate,
+      context: {
+        limit: noticePerPage,
+        skip: index * noticePerPage,
+        numPages: noticeNumPages,
+        currentPage: index + 1,
+      },
+    });
+  });
 };
-
-// exports.createPages = ({ actions, graphql, }) => {
-//   const { createPage, } = actions;
-//   const BlogPostTemplate = path.resolve('src/templates/BlogPostTemplate.jsx');
-//   const BlogTagsTemplate = path.resolve('src/templates/BlogTagsTemplate.jsx');
-//   const BlogCategoriesTemplate = path.resolve('src/templates/BlogCategoriesTemplate.jsx');
-
-//   return graphql(`
-//     {
-//       allMdx(
-//         sort: {fields: frontmatter___createdAt, order: DESC}
-//         filter: {frontmatter: {display: {eq: true}}}
-//       ) {
-//         nodes {
-//           frontmatter {
-//             category
-//             createdAt
-//             description
-//             tag
-//             title
-//             updatedAt
-//           }
-//           id
-//           slug
-//         }
-//       }
-//     }
-//   `).then(result => {
-//     if (result.errors) {
-//       throw result.errors;
-//     }
-
-//     const posts = result.data.allMdx.nodes;
-
-//     posts.forEach((post, index) => {
-//       const prev = index === post.length - 1 ? null : posts[index + 1];
-//       const next = index === 0 ? null : posts[index - 1];
-
-//       createPage({
-//         path: post.slug,
-//         component: BlogPostTemplate,
-//         context: {
-//           slug: post.slug,
-//           prev,
-//           next,
-//         },
-//       });
-//     });
-
-//     createPage({
-//       path: '/tags',
-//       component: BlogTagsTemplate,
-//     });
-
-//     createPage({
-//       path: '/categories',
-//       component: BlogCategoriesTemplate,
-//     });
-//   });
-// };
 
 exports.onCreateNode = ({ node, actions, getNode, }) => {
   const { createNodeField, } = actions;
@@ -187,4 +241,22 @@ exports.onCreateNode = ({ node, actions, getNode, }) => {
       value,
     });
   }
+};
+
+exports.onPreInit = () => {
+  if (process.argv[2] === 'build') {
+    fs.rmdirSync(path.join(__dirname, 'blog'), { recursive: true, });
+    fs.renameSync(
+      path.join(__dirname, 'public'),
+      path.join(__dirname, 'public_dev')
+    );
+  }
+};
+
+exports.onPostBuild = () => {
+  fs.renameSync(path.join(__dirname, 'public'), path.join(__dirname, 'blog'));
+  fs.renameSync(
+    path.join(__dirname, 'public_dev'),
+    path.join(__dirname, 'public')
+  );
 };

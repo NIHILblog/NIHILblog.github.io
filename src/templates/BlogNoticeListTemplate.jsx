@@ -1,21 +1,21 @@
-import React from 'react';
-import { graphql, Link } from 'gatsby';
-import AppLayout from '@layouts/AppLayout';
 import Paginator from '@components/Paginator';
+import AppLayout from '@layouts/AppLayout';
+import { graphql, Link } from 'gatsby';
+import React from 'react';
 
-const BlogPostsTemplate = ({ data, pageContext, }) => {
+const BlogNoticeListTemplate = ({ data, pageContext, }) => {
   const { currentPage, numPages, } = pageContext;
   const props = {
     currentPage,
     numPages,
-    type: 'post',
+    type: 'notice',
   };
 
   const siteData = {
-    pageName: `포스트 목록 (${currentPage} 페이지)`,
+    pageName: `공지 목록 (${currentPage} 페이지)`,
     pageDescription: '',
     pageKeywords: '',
-    pageUrl: `/page/${currentPage}`,
+    pageUrl: `/notice/page/${currentPage}`,
     pageType: 'website',
   };
 
@@ -30,7 +30,7 @@ const BlogPostsTemplate = ({ data, pageContext, }) => {
             {data.allMdx.nodes.map((post) => (
               <div className='list-item' key={post.id}>
                 <h3 className='list-title'>
-                  <Link to={`/${post.slug}`}><i className='fas fa-comment-alt' /> {post.frontmatter.title}</Link>
+                  <Link to={`/${post.slug}`}><i className='fas fa-bell' /> {post.frontmatter.title}</Link>
                 </h3>
                 <div className='list-content'>
                   <p className='content-info'>
@@ -43,22 +43,6 @@ const BlogPostsTemplate = ({ data, pageContext, }) => {
                     <time className='info-time' dateTime={post.frontmatter.createdAt}>
                       {post.frontmatter.createString}
                     </time>
-                  </p>
-                  <p className='content-info'>
-                    <span className='info-name'><i className='fas fa-folder-open' /> 카테고리</span>
-                    {post.frontmatter.category.map((item, index) => (
-                      <Link to={`/categories/${item}`} className='info-category' key={`${item}-${index}`}>
-                        <i className='fas fa-folder-open' /> {item}
-                      </Link>
-                    ))}
-                  </p>
-                  <p className='content-info'>
-                    <span className='info-name'><i className='fas fa-tags' /> 태그</span>
-                    {post.frontmatter.tag.map((item, index) => (
-                      <Link to={`/tags/${item}`} className='info-tag' key={`${item}-${index}`}>
-                        <i className='fas fa-tag' /> {item}
-                      </Link>
-                    ))}
                   </p>
                 </div>
               </div>
@@ -74,30 +58,28 @@ const BlogPostsTemplate = ({ data, pageContext, }) => {
 };
 
 export const query = graphql`
-  query POST_PAGES_QUERY($skip: Int! = 0) {
+  query NOTICE_LIST_QUERY($skip: Int! = 0) {
     allMdx(
+      filter: {frontmatter: {notice: {in: true, nin: false}, display: {eq: true}}}
       sort: {fields: frontmatter___createdAt, order: DESC}
       limit: 5
       skip: $skip
-      filter: {frontmatter: {display: {eq: true}, notice: {nin: true}}}
     ) {
       totalCount
       nodes {
-        slug
         id
-        excerpt(truncate: true, pruneLength: 250)
+        slug
+        excerpt(pruneLength: 250, truncate: true)
         frontmatter {
-          createString: createdAt(formatString: "YYYY년 MM월 DD일 HH시 mm분")
-          updateString: updatedAt(formatString: "YYYY년 MM월 DD일 HH시 mm분")
           createdAt
-          updatedAt
-          category
-          tag
+          createString: createdAt(formatString: "YYYY년 MM월 DD일 HH시 mm분")
           title
+          updatedAt
+          updateString: updatedAt(formatString: "YYYY년 MM월 DD일 HH시 mm분")
         }
       }
     }
   }
 `;
 
-export default BlogPostsTemplate;
+export default BlogNoticeListTemplate;

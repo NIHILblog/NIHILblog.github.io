@@ -3,8 +3,8 @@ import React from 'react';
 
 const siteData = {
   pageName: '에러 404',
-  pageDescription: '에러 페이지입니다.',
-  pageKeywords: '블로그, 정보',
+  pageDescription: '',
+  pageKeywords: '',
   pageUrl: '/404',
   pageType: 'website',
 };

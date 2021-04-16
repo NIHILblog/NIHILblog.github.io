@@ -3,9 +3,9 @@ import AppLayout from '@layouts/AppLayout';
 import { graphql, Link } from 'gatsby';
 
 const siteData = {
-  pageName: '카테고리',
-  pageDescription: '카테고리 모아놓은 페이지',
-  pageKeywords: '카테고리',
+  pageName: '카테고리 목록',
+  pageDescription: '',
+  pageKeywords: '',
   pageUrl: '/categories',
   pageType: 'website',
 };
@@ -18,28 +18,17 @@ const BlogCategoriesTemplate = ({ data, }) => {
       <AppLayout {...siteData}>
         <div id='blog-categories-page'>
           <section id='items-preview'>
-            <h2 id='item-list-name'>카테고리 목록</h2>
+            <div id='item-list-name'>
+              <h2>카테고리 목록</h2>
+              <p>포스트에 사용된 카테고리 목록입니다. 각 카테고리에는 링크가 되어있고 어떤 카테고리에 어떤 포스트들이 들어있는지 확인 할 수 있습니다. 숫자는 사용된 포스트의 수를 의미합니다.</p>
+            </div>
             <p id='item-list'>
               {group && group.map((category, index) => (
-                <span className='list-item' key={`${category.fieldValue}${category.totalCount}-${index}`}>
-                  {category.fieldValue} ({category.totalCount}건)
-                </span>
+                <Link to={`/categories/${category.fieldValue}`} className='list-item' key={index}>
+                  <i className='fas fa-folder-open' /> {category.fieldValue} ({category.totalCount}건)
+                </Link>
               ))}
             </p>
-          </section>
-          <section id='items-detail'>
-            {group && group.map((category, index) => (
-              <div className='items-item' key={`${category.fieldValue}-${index}`}>
-                <h2 className='item-name'>{category.fieldValue} ({category.totalCount}건)</h2>
-                <div className='item-posts'>
-                  {category.nodes.map((post) => (
-                    <p className='item-post' key={post.id}>
-                      <Link to={`/${post.slug}`}>{post.frontmatter.title}</Link>
-                    </p>
-                  ))}
-                </div>
-              </div>
-            ))}
           </section>
         </div>
       </AppLayout>
@@ -49,7 +38,10 @@ const BlogCategoriesTemplate = ({ data, }) => {
 
 export const query = graphql`
   query CATEGORIES_QUERY {
-    categories: allMdx(sort: {fields: frontmatter___createdAt, order: DESC}) {
+    categories: allMdx(
+      sort: {fields: frontmatter___createdAt, order: DESC}
+      filter: {frontmatter: {display: {eq: true}}}
+    ) {
       group(field: frontmatter___category) {
         fieldValue
         totalCount

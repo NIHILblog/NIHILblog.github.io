@@ -6,9 +6,19 @@ import HeaderContainer from '@components/HeaderContainer';
 import { Global } from '@emotion/react';
 import GlobalStyle from '@styles/GlobalStyle';
 import NavContainer from '@components/NavContainer';
+import BlogPageContainer from '@components/BlogPageContainer';
 
 const AppLayout = ({ children, pageName, pageDescription, pageKeywords, pageUrl, pageType, }) => {
-  const { title, generator, author, url, } = useSiteMetaDataQuery();
+  const { title, generator, author, url, description, keywords, } = useSiteMetaDataQuery();
+  const siteData = {};
+
+  if (pageDescription === '') {
+    siteData.description = description;
+    siteData.keywords = keywords;
+  } else {
+    siteData.description = pageDescription;
+    siteData.keywords = pageKeywords;
+  }
 
   return (
     <>
@@ -17,20 +27,16 @@ const AppLayout = ({ children, pageName, pageDescription, pageKeywords, pageUrl,
       <Helmet>
         {/* 기본 메타태그 */}
         <title>{ `${pageName}` } - { title }</title>
-        <meta name='description' content={pageDescription} />
+        <meta name='description' content={siteData.description} />
         <meta name='author' content={author} />
         <meta name='generator' content={generator} />
-        <meta name='keywords' content={pageKeywords} />
-
-        <link rel='shortcut icon' href='/favicon.ico' type='image/x-icon' />
-        <link rel='icon' href='/favicon.ico' type='image/x-icon' />
-        <link rel='stylesheet' href='https://use.fontawesome.com/releases/v5.15.1/css/all.css' integrity='sha384-vp86vTRFVJgpjF9jiIGPEEqYqlDwgyBgEF109VFjmqGmIY/Y4HV4d3Gp2irVfcrp' crossOrigin='anonymous' />
+        <meta name='keywords' content={siteData.keywords} />
 
         {/* 오픈그래프 */}
         <meta property='og:site_name' content={title} />
         <meta property='og:type' content={pageType} />
         <meta property='og:title' content={pageName} />
-        <meta property='og:description' content={pageDescription} />
+        <meta property='og:description' content={siteData.description} />
         {/* <meta property='og:image' content={pageImage} /> */}
         <meta property='og:locale' content='ko_KR' />
         <meta property='og:url' content={`${url}${pageUrl}`} />
@@ -40,7 +46,7 @@ const AppLayout = ({ children, pageName, pageDescription, pageKeywords, pageUrl,
         <meta name='twitter:site' content={`@${author}`} />
         <meta name='twitter:title' content={`${pageName} - ${title}`} />
         <meta name='twitter:creator' content={`@${author}`} />
-        <meta name='twitter:description' content={pageDescription} />
+        <meta name='twitter:description' content={siteData.description} />
         {/* <meta name='twitter:image' content={pageImage} /> */}
 
         {/* 검색등록 */}
@@ -51,9 +57,9 @@ const AppLayout = ({ children, pageName, pageDescription, pageKeywords, pageUrl,
       <NavContainer />
 
       {/* 메인 */}
-      <main>
+      <BlogPageContainer>
         { children }
-      </main>
+      </BlogPageContainer>
 
       {/* 푸터 */}
       <FooterContainer />

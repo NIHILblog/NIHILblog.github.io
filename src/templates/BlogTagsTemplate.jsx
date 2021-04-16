@@ -3,9 +3,9 @@ import AppLayout from '@layouts/AppLayout';
 import { graphql, Link } from 'gatsby';
 
 const siteData = {
-  pageName: '태그',
-  pageDescription: '태그 모아놓은 페이지',
-  pageKeywords: '태그',
+  pageName: '태그 목록',
+  pageDescription: '',
+  pageKeywords: '',
   pageUrl: '/tags',
   pageType: 'website',
 };
@@ -18,28 +18,17 @@ const BlogTagsTemplate = ({ data, }) => {
       <AppLayout {...siteData}>
         <div id='blog-tags-page'>
           <section id='items-preview'>
-            <h2 id='item-list-name'>태그 목록</h2>
+            <div id='item-list-name'>
+              <h2>태그 목록</h2>
+              <p>포스트에 사용된 태그 목록입니다. 각 태그에는 링크가 걸려있고 어떤 포스트가 어떤 태그를 사용했는지 확인 할 수 있습니다. 숫자는 사용된 포스트의 수를 의미합니다.</p>
+            </div>
             <p id='item-list'>
               {group && group.map((tag, index) => (
-                <span className='list-item' key={`${tag.fieldValue}${tag.totalCount}-${index}`}>
-                  {tag.fieldValue} ({tag.totalCount}건)
-                </span>
+                <Link to={`/tags/${tag.fieldValue}`} className='list-item' key={index}>
+                  <i className='fas fa-tag' /> {tag.fieldValue} ({tag.totalCount}건)
+                </Link>
               ))}
             </p>
-          </section>
-          <section id='items-detail'>
-            {group && group.map((tag, index) => (
-              <div className='items-item' key={`${tag.fieldValue}-${index}`}>
-                <h2 className='item-name'>{tag.fieldValue} ({tag.totalCount}건)</h2>
-                <div className='item-posts'>
-                  {tag.nodes.map((post) => (
-                    <p className='tag-post' key={post.id}>
-                      <Link to={`/${post.slug}`}>{post.frontmatter.title}</Link>
-                    </p>
-                  ))}
-                </div>
-              </div>
-            ))}
           </section>
         </div>
       </AppLayout>
@@ -49,7 +38,10 @@ const BlogTagsTemplate = ({ data, }) => {
 
 export const query = graphql`
   query TAGS_QUERY {
-    tags: allMdx(sort: {fields: frontmatter___createdAt, order: DESC}) {
+    tags: allMdx(
+      sort: {fields: frontmatter___createdAt, order: DESC}
+      filter: {frontmatter: {display: {eq: true}}}
+    ) {
       group(field: frontmatter___tag) {
         fieldValue
         totalCount

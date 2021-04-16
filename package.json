@@ -1,19 +1,19 @@
 {
-  "name": "react-gatsby-setting",
-  "version": "1.0.0",
+  "name": "nihil-blog",
+  "version": "1.2.0",
   "description": "갯츠비 편하게 하려고 만든 템플릿",
   "main": "index.js",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/NIHILncunia/gatsby-training.git"
+    "url": "git+https://github.com/nihilblog/nihilblog.git"
   },
   "bugs": {
-    "url": "https://github.com/NIHILncunia/gatsby-training/issues"
+    "url": "https://github.com/nihilblog/nihilblog/issues"
   },
-  "homepage": "https://github.com/NIHILncunia/gatsby-training#readme",
+  "homepage": "https://github.com/nihilblog/nihilblog#readme",
   "scripts": {
-    "build": "gatsby clean && gatsby build",
     "serve": "gatsby clean && gatsby develop",
+    "build": "gatsby build --prefix-paths",
     "clean": "gatsby clean"
   },
   "keywords": [],
@@ -21,19 +21,22 @@
   "license": "MIT",
   "dependencies": {
     "@emotion/react": "^11.1.5",
-    "@emotion/styled": "^11.1.5",
+    "@emotion/styled": "^11.3.0",
     "@mdx-js/mdx": "^1.6.22",
     "@mdx-js/react": "^1.6.22",
-    "gatsby": "^3.2.1",
-    "gatsby-plugin-emotion": "^6.2.0",
-    "gatsby-plugin-image": "^1.2.1",
-    "gatsby-plugin-mdx": "^2.2.0",
-    "gatsby-plugin-react-helmet": "^4.2.0",
-    "gatsby-plugin-sharp": "^3.2.1",
-    "gatsby-remark-images": "^4.2.0",
-    "gatsby-source-filesystem": "^3.2.0",
-    "gatsby-transformer-remark": "^3.2.0",
-    "gatsby-transformer-sharp": "^3.2.0",
+    "gatsby": "^3.3.0",
+    "gatsby-plugin-emotion": "^6.3.0",
+    "gatsby-plugin-feed": "^3.3.0",
+    "gatsby-plugin-image": "^1.3.0",
+    "gatsby-plugin-mdx": "^2.3.0",
+    "gatsby-plugin-react-helmet": "^4.3.0",
+    "gatsby-plugin-sass": "^4.3.0",
+    "gatsby-plugin-sharp": "^3.3.0",
+    "gatsby-plugin-sitemap": "^3.3.0",
+    "gatsby-remark-images": "^5.0.0",
+    "gatsby-source-filesystem": "^3.3.0",
+    "gatsby-transformer-remark": "^4.0.0",
+    "gatsby-transformer-sharp": "^3.3.0",
     "immer": "^9.0.1",
     "prism-react-renderer": "^1.2.0",
     "prop-types": "^15.7.2",
@@ -44,12 +47,13 @@
     "redux": "^4.0.5",
     "redux-saga": "^1.1.3",
     "remark-unwrap-images": "^2.0.0",
+    "sass": "^1.32.8",
     "uuid": "^8.3.2"
   },
   "devDependencies": {
-    "eslint": "^7.23.0",
+    "eslint": "^7.24.0",
     "eslint-plugin-import": "^2.22.1",
-    "eslint-plugin-react": "^7.23.1",
+    "eslint-plugin-react": "^7.23.2",
     "eslint-plugin-react-hooks": "^4.2.0"
   }
 }

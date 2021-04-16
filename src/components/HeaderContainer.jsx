@@ -16,15 +16,17 @@ const HeaderContainer = () => {
     width: 100%;
     box-sizing: border-box;
     box-shadow: 0px 0px 10px -4px #333333;
-    margin-bottom: 10px;
+    border-bottom: 2px dotted #ffffff50;
     
     & #blog-logo {
-      width: 300px;
+      width: 250px;
       display: block;
       margin: 0px auto;
     }
     & > .small-text {
       text-align: center;
+      font-weight: 500;
+      transition: all 0.3s;
     }
   `;
 
