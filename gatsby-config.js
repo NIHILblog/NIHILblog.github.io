@@ -55,14 +55,7 @@ module.exports = {
               aliases: {
                 js: 'javascript',
               },
-              showLineNumbers: false,
-              noInlineHighlight: false,
-              prompt: {
-                user: 'root',
-                host: 'localhost',
-                global: false,
-              },
-              escapeEntities: {},
+              showLineNumbers: true,
             },
           },
         ],

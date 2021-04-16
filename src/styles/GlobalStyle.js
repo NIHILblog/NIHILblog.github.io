@@ -89,6 +89,11 @@ export default css`
     #post-navigation .nav-button span,
     #post-content .post-unordered-list,
     #post-content .post-ordered-list,
+    .gatsby-highlight pre[class*="language-"] code[class*="language-"] span,
+    .gatsby-highlight pre[class*="language-"] code[class*="language-"],
+    .gatsby-highlight pre[class*="language-"],
+    .gatsby-highlight,
+    .gatsby-highlight button,
     #blog-footer a {font-size: ${size[1]};}
 
     /* 제목 텍스트 */
@@ -159,6 +164,11 @@ export default css`
     #post-navigation .nav-button span,
     #post-content .post-unordered-list,
     #post-content .post-ordered-list,
+    .gatsby-highlight pre[class*="language-"] code[class*="language-"] span,
+    .gatsby-highlight pre[class*="language-"] code[class*="language-"],
+    .gatsby-highlight pre[class*="language-"],
+    .gatsby-highlight,
+    .gatsby-highlight button,
     #blog-footer a {font-size: ${size[2]};}
 
     /* 제목 텍스트 */
@@ -232,6 +242,11 @@ export default css`
     #post-navigation .nav-button span,
     #post-content .post-unordered-list,
     #post-content .post-ordered-list,
+    .gatsby-highlight pre[class*="language-"] code[class*="language-"] span,
+    .gatsby-highlight pre[class*="language-"] code[class*="language-"],
+    .gatsby-highlight pre[class*="language-"],
+    .gatsby-highlight,
+    .gatsby-highlight button,
     #blog-footer a {font-size: ${size[3]};}
 
     /* 제목 텍스트 */

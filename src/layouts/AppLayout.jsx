@@ -13,7 +13,7 @@ const AppLayout = ({ children, pageName, pageDescription, pageKeywords, pageUrl,
   useEffect(() => {
     Prism.highlightAll();
   });
-
+  
   const { title, generator, author, url, description, keywords, } = useSiteMetaDataQuery();
   const siteData = {};
 

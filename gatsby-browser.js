@@ -1,11 +1,13 @@
 import React from 'react';
 import { MDXProvider } from '@mdx-js/react';
-require('prismjs/themes/prism-tomorrow.css');
-require('prismjs/plugins/line-numbers/prism-line-numbers.css');
 import {
   H1, H2, H3, H4, P, Image, A, Strike, Strong, Q,
   Code, Message, Em, Ol, Ul, Pre
 } from '@components/PostComponents';
+
+import 'prismjs/themes/prism-tomorrow.css';
+import 'prismjs/plugins/line-numbers/prism-line-numbers.css';
+import 'prismjs/plugins/line-highlight/prism-line-highlight.css';
 
 const components = {
   h1: props => <H1 {...props} />,
@@ -27,8 +29,7 @@ const components = {
   Message,
 };
 
-export const wrapRootElement = ({ element, }) => {
-  return (
+export const wrapRootElement = ({ element, }) => { return (
     <>
       <MDXProvider components={{ ...components, }}>
         {element}
