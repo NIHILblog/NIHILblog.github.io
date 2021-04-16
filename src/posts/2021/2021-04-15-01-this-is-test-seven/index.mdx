@@ -32,12 +32,24 @@ import { A, Message, Q, P, H1, H2, H3, H4 } from '@components/PostComponents'
 * 이것은
 * 목록이다
 * 목록!!!
+  1. 순차 목록도 넣는다.
   * 목록 안에 목록을 넣을 수도 있다
-  * 솔직히 편하다
+  * 솔직히 편하다 <A type='blog' href='#'>링크</A>도 잘 들어가나.
+    1. 순차 목록 또 넣는다.
+    * 3단계!!!
+    * 강력한 기능을 맛보아라!
 
-1. 이것도 목록이다
+1. 이것도 목록이다 <A type='youtube' href='#'>링크</A>
 2. 숫자는 대충 써도 된다. 알아서 잘 돌아간다.
 3. 여기까지만 하자.
+    * 비순차 목록을 넣어본다.
+    1. 내부 순차 목록 <A type='blog' href='#'>링크</A>
+    2. 내부 순차 목록
+    3. 내부 순차 목록
+        1. 내부 내부 순차 목록 <A type='normal' href='#'>링크</A>
+        1. 내부 내부 순차 목록
+        1. 내부 내부 순차 목록
+        * 여기도 넣어본다
 
 이것은 *기울기*이다.
 
@@ -57,22 +69,34 @@ import { A, Message, Q, P, H1, H2, H3, H4 } from '@components/PostComponents'
 <!-- This is comment. -->
 <div>
   <p>Hello World!!</p>
+  <p>Hello World!!</p>
+  <p>Hello World!!</p>
+  <p>Hello World!!</p>
+  <p>Hello World!!</p>
+  <p>Hello World!!</p>
+  <p>Hello World!!</p>
+  <p>Hello World!!</p>
+  <p>Hello World!!</p>
 </div>
+```
+
+```javascript
+console.log('Hello World!!');
 ```
 
 테이블은 그냥 컴포넌트 만드는 게 낫다.
 
 <Message color='red'>
-  위험 메시지
+  위험 메시지 <A type='blog' href='#'>내부 링크</A> <A type='normal' href='#'>외부 링크</A>
 </Message>
 <Message color='blue'>
-  안내 메시지
+  안내 메시지 <A type='blog' href='#'>내부 링크</A> <A type='normal' href='#'>외부 링크</A>
 </Message>
 <Message color='yellow'>
-  주의 메시지
+  주의 메시지 <A type='blog' href='#'>내부 링크</A> <A type='normal' href='#'>외부 링크</A>
 </Message>
 <Message color='green'>
-  정보 메시지
+  정보 메시지 <A type='blog' href='#'>내부 링크</A> <A type='normal' href='#'>외부 링크</A>
 </Message>
 
 들도 이렇게 컴포넌트 쓰는 게 낫다.

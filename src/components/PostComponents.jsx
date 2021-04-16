@@ -1,14 +1,15 @@
-import React from 'react';
+import React, { useState, useCallback } from 'react';
 import { css } from '@emotion/react';
+import { copyToClipboard } from '@utils/copy-to-clipboard';
 
-export const H1 = ({ children, }) => {
+export const H1 = ({ children, top = 40, bottom = 40, }) => {
   const style = css`
     font-weight: 500;
     color: #ffffff;
     background: #333333;
-    padding: 5px 10px;
+    padding: 10px;
     border-radius: 10px;
-    margin: 40px 0px;
+    margin: ${top}px 0px ${bottom}px 0px;
     transition: all 0.3s;
 
     &:before {
@@ -26,13 +27,13 @@ export const H1 = ({ children, }) => {
   );
 };
 
-export const H2 = ({ children, }) => {
+export const H2 = ({ children, top = 40, bottom = 40, }) => {
   const style = css`
-    margin: 40px 0px;
+    margin: ${top}px 0px ${bottom}px 0px;
     font-weight: 500;
     color: #ffffff;
     background: #555555;
-    padding: 5px 10px;
+    padding: 8px 10px;
     border-radius: 10px;
     transition: all 0.3s;
 
@@ -51,13 +52,13 @@ export const H2 = ({ children, }) => {
   );
 };
 
-export const H3 = ({ children, }) => {
+export const H3 = ({ children, top = 40, bottom = 40, }) => {
   const style = css`
-    margin: 40px 0px;
+    margin: ${top}px 0px ${bottom}px 0px;
     font-weight: 500;
     color: #ffffff;
     background: #777777;
-    padding: 5px 10px;
+    padding: 6px 10px;
     border-radius: 10px;
     transition: all 0.3s;
 
@@ -81,13 +82,13 @@ export const H3 = ({ children, }) => {
   );
 };
 
-export const H4 = ({ children, }) => {
+export const H4 = ({ children, top = 40, bottom = 40, }) => {
   const style = css`
-    margin: 40px 0px;
+    margin: ${top}px 0px ${bottom}px 0px;
     font-weight: 500;
-    color: #777777;
-    padding: 5px 10px;
-    border: 2px solid #777777;
+    color: #ffffff;
+    padding: 4px 10px;
+    background-color: #999999;
     border-radius: 10px;
     transition: all 0.3s;
 
@@ -111,11 +112,11 @@ export const H4 = ({ children, }) => {
   );
 };
 
-export const P = ({ children, }) => {
+export const P = ({ children, top = 20, bottom = 20, }) => {
   const style = css`
     text-align: justify;
     line-height: 1.8;
-    margin: 20px 0px;
+    margin: ${top}px 0px ${bottom}px 0px;
     text-indent: 10px;
     letter-spacing: -1px;
     color: #333333;
@@ -158,11 +159,11 @@ export const Code = ({ children, }) => {
   );
 };
 
-export const Image = ({ src, alt, }) => {
+export const Image = ({ src, alt, top = 20, bottom = 20, }) => {
   const style = css`
     width: 100%;
     box-sizing: border-box;
-    margin: 20px 0px;
+    margin: ${top}px 0px ${bottom}px 0px;
     background-color: #333333;
     padding: 10px;
     border-radius: 10px;
@@ -311,7 +312,7 @@ export const Q = ({ children, }) => {
   );
 };
 
-export const Message = ({ children, color, }) => {
+export const Message = ({ children, color, top = 20, bottom = 20, }) => {
   const colorType = {};
 
   if (color === 'red') {
@@ -323,7 +324,7 @@ export const Message = ({ children, color, }) => {
     colorType.icon = 'f059';
     colorType.word = '안내';
   } else if (color === 'yellow') {
-    colorType.color = [ '#ff922c50', '#f37b0d', '#f37b0d50', ];
+    colorType.color = [ '#fff70c50', '#a39000', '#a3900050', ];
     colorType.icon = 'f06a';
     colorType.word = '주의';
   } else if (color === 'green') {
@@ -335,7 +336,7 @@ export const Message = ({ children, color, }) => {
   const style = css`
     padding: 10px;
     border-radius: 10px;
-    margin: 20px 0px;
+    margin: ${top}px 0px ${bottom}px 0px;
     font-size: 90%;
     background: ${colorType.color[0]};
     color: ${colorType.color[1]};
@@ -362,6 +363,17 @@ export const Message = ({ children, color, }) => {
       text-align: justify;
       transition: all 0.3s;
       letter-spacing: -1px;
+      text-indent: 10px;
+
+      & > a {
+        color: ${colorType.color[1]};
+        border: 2px solid ${colorType.color[1]};
+        
+        &:hover {
+          color: #ffffff;
+          background-color: ${colorType.color[1]};
+        }
+      }
     }
   `;
 
@@ -387,18 +399,256 @@ export const Em = ({ children, }) => {
   );
 };
 
-export const Ul = ({ children, }) => {
+export const Ul = ({ children, top = 20, bottom = 20, }) => {
+  const style = css`
+    margin: ${top}px 0px ${bottom}px 0px;
+    padding: 7px 10px 7px 10px;
+    border: 2px solid #33333330;
+    background-color: #33333310;
+    border-radius: 10px;
+    color: #333333;
+    letter-spacing: -1px;
+    font-weight: 500;
+    transition: all 0.3s;
+
+    & > li {
+      margin: 3px 0px;
+      transition: all 0.3s;
+
+      &:before {
+        content: '\\f35a';
+        font-family: 'Font Awesome 5 Free';
+        margin-right: 5px;
+        font-weight: 900;
+      }
+
+      & > ol {
+        padding: 0px;
+        border: none;
+        border-radius: none;
+        background-color: transparent;
+
+        & > li {
+          &:before {
+            background: #555555;
+            color: #ffffff;
+            font-weight: 900;
+            padding: 0px 5px;
+            border-radius: 5px;
+            font-size: 90%;
+          }
+        }
+      }
+
+      & > ul {
+        padding: 0px;
+        border: none;
+        border-radius: none;
+        background-color: transparent;
+
+        & > li {
+          &:before {
+            content: '\\f35a';
+            font-family: 'Font Awesome 5 Free';
+            margin-right: 5px;
+            font-weight: 500;
+          }
+
+          & > ol {
+            & > li {
+              &:before {
+                background: #777777;
+                color: #ffffff;
+                font-weight: 900;
+                padding: 0px 5px;
+                border-radius: 5px;
+                font-size: 90%;
+              }
+            }
+          }
+
+          & > ul {
+            padding: 0px;
+            border: none;
+            border-radius: none;
+            background-color: transparent;
+
+            & > li {
+              &:before {
+                content: '\\f105';
+                font-family: 'Font Awesome 5 Free';
+                margin-right: 5px;
+                font-weight: 900;
+              }
+            }
+          }
+        }
+      }
+    }
+
+    & ul,
+    & ol {
+      margin: 0px 0px 0px 25px;
+    }
+  `;
+
   return (
     <>
-      <ul className='post-unordered-list'>{children}</ul>
+      <ul className='post-unordered-list' css={style}>{children}</ul>
     </>
   );
 };
 
-export const Ol = ({ children, }) => {
+export const Ol = ({ children, top = 20, bottom = 20, }) => {
+  const style = css`
+    margin: ${top}px 0px ${bottom}px 0px;
+    transition: all 0.3s;
+    padding: 7px 10px 7px 10px;
+    list-style-type: none;
+    counter-reset: number;
+    border: 2px solid #33333330;
+    background-color: #33333310;
+    border-radius: 10px;
+    font-weight: 500;
+    color: #333333;
+
+    & > li {
+      margin: 3px 0px;
+      transition: all 0.3s;
+
+      &:before {
+        background: #333333;
+        color: #ffffff;
+        font-weight: 900;
+        padding: 0px 5px;
+        border-radius: 5px;
+        font-size: 90%;
+      }
+
+      & > ul {
+        border: none;
+        background-color: transparent;
+        border-radius: none;
+        padding: 0px;
+
+        & > li {
+          &:before {
+            content: '\\f35a';
+            font-family: 'Font Awesome 5 Free';
+            margin-right: 5px;
+            font-weight: 500;
+          }
+        }
+      }
+
+      & > ol {
+        border: none;
+        background-color: transparent;
+        border-radius: none;
+        padding: 0px;
+        
+        & > li {
+          &:before {
+            background: #555555;
+            color: #ffffff;
+            font-weight: 900;
+            padding: 0px 5px;
+            border-radius: 5px;
+            font-size: 90%;
+          }
+
+          & > ul {
+            & > li {
+              &:before {
+                content: '\\f105';
+                font-family: 'Font Awesome 5 Free';
+                margin-right: 5px;
+                font-weight: 900;
+              }
+            }
+          }
+
+          & > ol {
+            border: none;
+            background-color: transparent;
+            border-radius: none;
+            padding: 0px;
+            
+            & > li {
+              &:before {
+                background: #777777;
+                color: #ffffff;
+                font-weight: 900;
+                padding: 0px 5px;
+                border-radius: 5px;
+                font-size: 90%;
+              }
+            }
+          }
+        }
+      }
+    }
+
+    & ol {
+      list-style-type: none;
+      counter-reset: number;
+    }
+
+    & ul,
+    & ol {
+      margin: 0px 0px 0px 25px;
+    }
+
+    & li {
+      counter-increment: number;
+      letter-spacing: -1px;
+
+      &:before {
+        content: counter(number) '.';
+        margin-right: 5px;
+      }
+    }
+  `;
+
   return (
     <>
-      <ol className='post-ordered-list'>{children}</ol>
+      <ol className='post-ordered-list' css={style}>{children}</ol>
+    </>
+  );
+};
+
+export const Pre = ({ children, }) => {
+  const [ word, setWord, ] = useState('복사');
+
+  const codeLang = children.props.className;
+  const codeContent = children.props.children;
+  const matches = codeLang.match(/language-(?<lang>.*)/);
+  const lang = (
+    matches && matches.groups && matches.groups.lang
+      ? matches.groups.lang
+      : ''
+  );
+  const code = children.props.children.trim();
+  const capitalizeLang = lang.toUpperCase();
+
+  const onClickCopy = useCallback(() => {
+    copyToClipboard(code);
+    setWord('복사 완료');
+  }, []);
+
+  const style = css`
+    pre[class*="language-"] {
+      background-color: #333333;
+    }
+  `;
+
+  return (
+    <>
+      <div className='gatsby-highlight' data-language={lang} css={style}>
+        <pre className={codeLang}>
+          <code className={codeLang}>{codeContent}</code>
+        </pre>
+      </div>
     </>
   );
 };

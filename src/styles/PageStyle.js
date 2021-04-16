@@ -8,10 +8,11 @@ export default css`
     border-radius: 10px;
     box-shadow: 0px 0px 10px -4px #333333;
     margin-bottom: 50px;
+    transition: all 0.3s;
 
     & > h2 {
       background-color: #333333;
-      padding: 5px 10px;
+      padding: 10px;
       border-radius: 10px;
       margin-bottom: 20px;
       color: #ffffff;
@@ -26,6 +27,7 @@ export default css`
       color: #333333;
       font-weight: 500;
       transition: all 0.3s;
+      text-indent: 10px;
     }
   }
   
@@ -41,11 +43,13 @@ export default css`
   & > #blog-category-page #category-post-list .list-item,
   & > #blog-tag-page #tag-post-list .list-item,
   & > #blog-post-page,
+  & > #post-navigation,
   & > #blog-info-page .info-block {
     background-color: #ffffff;
     padding: 10px;
     border-radius: 10px;
     box-shadow: 0px 0px 10px -4px #333333;
+    transition: all 0.3s;
   }
 
   /* 포스트 리스트 제목 */
@@ -58,7 +62,7 @@ export default css`
 
       & > h2 {
         background-color: #333333;
-        padding: 5px 10px;
+        padding: 10px;
         border-radius: 10px;
         margin-bottom: 20px;
         color: #ffffff;
@@ -235,7 +239,7 @@ export default css`
 
       & > h2 {
         background-color: #333333;
-        padding: 5px 10px;
+        padding: 10px;
         border-radius: 10px;
         margin-bottom: 20px;
         color: #ffffff;
@@ -288,7 +292,7 @@ export default css`
 
     & > h2 {
       background-color: #333333;
-      padding: 5px 10px;
+      padding: 10px;
       border-radius: 10px;
       margin-bottom: 20px;
       color: #ffffff;
@@ -308,13 +312,15 @@ export default css`
 
   /* 포스트 페이지 */
   & > #blog-post-page {
+    margin-bottom: 30px;
+
     & > #post-metadata {
-      margin-bottom: 100px;
+      margin-bottom: 40px;
       letter-spacing: -1px;
 
       & > #content-title {
         background-color: #333333;
-        padding: 5px 10px;
+        padding: 10px;
         border-radius: 10px;
         margin-bottom: 20px;
         color: #ffffff;
@@ -356,6 +362,108 @@ export default css`
         }
       }
     }
+
+    & > hr {
+      border: none;
+      border-bottom: 3px dotted #888888;
+      margin: 60px 0px;
+    }
+  }
+
+  & > #post-navigation {
+    & > .nav-button {
+      &:nth-of-type(1) {
+        margin-bottom: 5px;
+
+        & > a {
+          display: block;
+          border: 2px solid #555555;
+          color: #555555;
+          padding: 10px;
+          font-weight: 500;
+          border-radius: 10px;
+          text-align: left;
+          transition: all 0.3s;
+
+          &:hover {
+            color: #ffffff;
+            background-color: #333333;
+            border: 2px solid #333333;
+            transition: all 0.3s;
+          }
+
+          &:before {
+            content: '\\f359';
+            font-family: 'Font Awesome 5 Free';
+            font-weight: 900;
+            margin-right: 5px;
+          }
+        }
+
+        & > span {
+          display: block;
+          border: 2px solid #55555550;
+          color: #55555550;
+          padding: 10px;
+          font-weight: 500;
+          border-radius: 10px;
+          text-align: left;
+          transition: all 0.3s;
+
+          &:before {
+            content: '\\f359';
+            font-family: 'Font Awesome 5 Free';
+            font-weight: 900;
+            margin-right: 5px;
+          }
+        }
+      }
+
+      &:nth-of-type(2) {
+        & > a {
+          display: block;
+          border: 2px solid #555555;
+          color: #555555;
+          padding: 10px;
+          font-weight: 500;
+          border-radius: 10px;
+          text-align: right;
+          transition: all 0.3s;
+
+          &:hover {
+            color: #ffffff;
+            background-color: #333333;
+            border: 2px solid #333333;
+            transition: all 0.3s;
+          }
+
+          &:after {
+            content: '\\f35a';
+            font-family: 'Font Awesome 5 Free';
+            font-weight: 900;
+            margin-left: 5px;
+          }
+        }
+
+        & > span {
+          display: block;
+          border: 2px solid #55555550;
+          color: #55555550;
+          padding: 10px;
+          font-weight: 500;
+          border-radius: 10px;
+          text-align: right;
+          transition: all 0.3s;
+
+          &:after {
+            content: '\\f35a';
+            font-family: 'Font Awesome 5 Free';
+            font-weight: 900;
+            margin-left: 5px;
+          }
+        }
+      }
+    }
   }
 
   /* 소개 페이지 */
@@ -364,7 +472,7 @@ export default css`
 
     & > .block-title {
       background-color: #333333;
-      padding: 5px 10px;
+      padding: 10px;
       border-radius: 10px;
       margin-bottom: 20px;
       color: #ffffff;
@@ -380,6 +488,7 @@ export default css`
       text-align: justify;
       font-weight: 500;
       transition: all 0.3s;
+      text-indent: 10px;
     }
   }
 `;

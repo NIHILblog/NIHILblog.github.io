@@ -3,6 +3,8 @@ import { graphql, Link } from 'gatsby';
 import { MDXRenderer } from 'gatsby-plugin-mdx';
 import AppLayout from '@layouts/AppLayout';
 import { Helmet } from 'react-helmet';
+import PostNavigation from '@components/PostNavigation';
+import { Message } from '@components/PostComponents';
 
 const BlogPostTemplate = ({ data, pageContext, }) => {
   const { frontmatter, body, slug, excerpt, } = data.mdx;
@@ -61,34 +63,17 @@ const BlogPostTemplate = ({ data, pageContext, }) => {
               </span>
             </p>
           </div>
+          <hr />
           <div id='post-content'>
             <MDXRenderer>
               {body}
             </MDXRenderer>
-          </div>
-          <div id='post-nav'>
-            {prev === false ? null : (
-              <>
-                {prev && (
-                  <p id='prev-post'>
-                    <span className='navigation-name'>이전 포스트</span>
-                    <span className='navigation-link-'><Link to={`/${prev.slug}`}>{prev.frontmatter.title}</Link></span>
-                  </p>
-                )}
-              </>
-            )}
-            {next === false ? null : (
-              <>
-                {next && (
-                  <p id='next-post'>
-                    <span className='navigation-name'>다음 포스트</span>
-                    <span className='navigation-link-'><Link to={`/${next.slug}`}>{next.frontmatter.title}</Link></span>
-                  </p>
-                )}
-              </>
-            )}
+            <Message color='blue' bottom='0'>
+              포스트를 읽고 궁금한 점이나 이해가 안가는 점, 그리고 문의 사항이 있을 경우엔 블로그 하단의 연락책을 이용하거나 아래에 덧글을 입력해주시면 빠르게 확인하고 답변 드리겠습니다. 이 포스트를 보신 모든 분들의 하루가 좋은 하루이길 바랍니다.
+            </Message>
           </div>
         </article>
+        <PostNavigation prev={prev} next={next} />
       </AppLayout>
     </>
   );

@@ -7,7 +7,7 @@ module.exports = {
     description: '블로그를 운영할 필요를 느꼈으나 네이버나 티스토리에 질려서 직접 GatsbyJS로 개발한 블로그이고, HTML, CSS, JavaScript 기술을 이용한 웹 개발 위주의 프로그래밍과 일본어 학습자료, 그리고 게임 관련된 컨텐츠를 다루는 블로그입니다.',
     author: 'NIHILncunia',
     generator: 'Visual Studio Code',
-    url: 'https://nihilncunia-blog.github.io',
+    url: 'https://nihilblog.github.io',
     keywords: '블로그, 코딩, 프로그래밍, 웹 프로그래밍, Blog, Coding, Programing, Web programing, 일본어, 일본어 공부, 게임, 게임 정보, Japanese, Japanese learning, Game, Game play',
   },
   plugins: [
@@ -16,6 +16,12 @@ module.exports = {
     'gatsby-plugin-sharp',
     'gatsby-transformer-sharp',
     'gatsby-plugin-sass',
+    {
+      resolve: 'gatsby-plugin-output',
+      options: {
+        publicPath: 'blog',
+      },
+    },
     {
       resolve: 'gatsby-source-filesystem',
       options: {
@@ -36,6 +42,30 @@ module.exports = {
         sourceMap: true,
         autoLabel: 'always',
         cssPropOptimization: true,
+      },
+    },
+    {
+      resolve: 'gatsby-transformer-remark',
+      options: {
+        plugins: [
+          {
+            resolve: 'gatsby-remark-prismjs',
+            options: {
+              classPrefix: 'language-',
+              aliases: {
+                js: 'javascript',
+              },
+              showLineNumbers: false,
+              noInlineHighlight: false,
+              prompt: {
+                user: 'root',
+                host: 'localhost',
+                global: false,
+              },
+              escapeEntities: {},
+            },
+          },
+        ],
       },
     },
     {

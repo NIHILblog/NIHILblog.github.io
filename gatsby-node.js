@@ -1,6 +1,5 @@
 const path = require('path');
 const { createFilePath, } = require('gatsby-source-filesystem');
-const fs = require('fs');
 
 exports.onCreateWebpackConfig = ({ actions, }) => {
   actions.setWebpackConfig({
@@ -62,7 +61,7 @@ exports.createPages = async ({ actions, graphql, }) => {
   const posts = result.data.allMdx.nodes;
 
   posts.forEach((post, index) => {
-    const prev = index === post.length - 1 ? null : posts[index + 1];
+    const prev = index === posts.length - 1 ? null : posts[index + 1];
     const next = index === 0 ? null : posts[index - 1];
 
     createPage({
@@ -183,7 +182,7 @@ exports.createPages = async ({ actions, graphql, }) => {
   const noticeList = noticeQuery.data.allMdx.nodes;
   
   noticeList.forEach((post, index) => {
-    const prev = index === post.length - 1 ? null : noticeList[index + 1];
+    const prev = index === noticeList.length - 1 ? null : noticeList[index + 1];
     const next = index === 0 ? null : noticeList[index - 1];
 
     createPage({
@@ -241,22 +240,4 @@ exports.onCreateNode = ({ node, actions, getNode, }) => {
       value,
     });
   }
-};
-
-exports.onPreInit = () => {
-  if (process.argv[2] === 'build') {
-    fs.rmdirSync(path.join(__dirname, 'blog'), { recursive: true, });
-    fs.renameSync(
-      path.join(__dirname, 'public'),
-      path.join(__dirname, 'public_dev')
-    );
-  }
-};
-
-exports.onPostBuild = () => {
-  fs.renameSync(path.join(__dirname, 'public'), path.join(__dirname, 'blog'));
-  fs.renameSync(
-    path.join(__dirname, 'public_dev'),
-    path.join(__dirname, 'public')
-  );
 };

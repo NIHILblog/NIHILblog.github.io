@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { Helmet } from 'react-helmet';
 import FooterContainer from '@components/FooterContainer';
 import { useSiteMetaDataQuery } from '@hooks/useSiteMetaDataQuery';
@@ -7,8 +7,13 @@ import { Global } from '@emotion/react';
 import GlobalStyle from '@styles/GlobalStyle';
 import NavContainer from '@components/NavContainer';
 import BlogPageContainer from '@components/BlogPageContainer';
+import Prism from 'prismjs';
 
 const AppLayout = ({ children, pageName, pageDescription, pageKeywords, pageUrl, pageType, }) => {
+  useEffect(() => {
+    Prism.highlightAll();
+  });
+
   const { title, generator, author, url, description, keywords, } = useSiteMetaDataQuery();
   const siteData = {};
 

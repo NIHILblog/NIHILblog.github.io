@@ -14,6 +14,19 @@ const size = {
 export default css`
   @import url(https://fonts.googleapis.com/earlyaccess/notosanskr.css);
 
+  @font-face {
+    font-family: 'CascadiaCode';
+    src: url('https://nihilblog.github.io/blog/fonts/CascadiaCode.eot');
+    src:
+      url('https://nihilblog.github.io/blog/fonts/CascadiaCode.eot?#iefix') format('embedded-opentype'),
+      url('https://nihilblog.github.io/blog/fonts/CascadiaCode.woff2') format('woff2'),
+      url('https://nihilblog.github.io/blog/fonts/CascadiaCode.svg#CascadiaCode') format('svg'),
+      url('https://nihilblog.github.io/blog/fonts/CascadiaCode.ttf') format('truetype'),
+      url('https://nihilblog.github.io/blog/fonts/CascadiaCode.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+  }
+
   * {
     padding: 0px;
     margin: 0px;
@@ -72,6 +85,10 @@ export default css`
     #post-content .Message-red,
     #post-content .Message-green,
     #post-content .Message-yellow,
+    #post-navigation .nav-button .nav-link,
+    #post-navigation .nav-button span,
+    #post-content .post-unordered-list,
+    #post-content .post-ordered-list,
     #blog-footer a {font-size: ${size[1]};}
 
     /* 제목 텍스트 */
@@ -138,6 +155,10 @@ export default css`
     #post-content .Message-red,
     #post-content .Message-green,
     #post-content .Message-yellow,
+    #post-navigation .nav-button .nav-link,
+    #post-navigation .nav-button span,
+    #post-content .post-unordered-list,
+    #post-content .post-ordered-list,
     #blog-footer a {font-size: ${size[2]};}
 
     /* 제목 텍스트 */
@@ -207,6 +228,10 @@ export default css`
     #post-content .Message-red,
     #post-content .Message-green,
     #post-content .Message-yellow,
+    #post-navigation .nav-button .nav-link,
+    #post-navigation .nav-button span,
+    #post-content .post-unordered-list,
+    #post-content .post-ordered-list,
     #blog-footer a {font-size: ${size[3]};}
 
     /* 제목 텍스트 */

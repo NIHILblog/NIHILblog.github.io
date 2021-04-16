@@ -1,5 +1,6 @@
+import PostNavigation from '@components/PostNavigation';
 import AppLayout from '@layouts/AppLayout';
-import { graphql, Link } from 'gatsby';
+import { graphql } from 'gatsby';
 import { MDXRenderer } from 'gatsby-plugin-mdx';
 import React from 'react';
 import { Helmet } from 'react-helmet';
@@ -46,29 +47,8 @@ const BlogNoticeTemplate = ({ data, pageContext, }) => {
               {body}
             </MDXRenderer>
           </div>
-          <div id='post-nav'>
-            {prev === false ? null : (
-              <>
-                {prev && (
-                  <p id='prev-post'>
-                    <span className='navigation-name'>이전 포스트</span>
-                    <span className='navigation-link-'><Link to={`/${prev.slug}`}>{prev.frontmatter.title}</Link></span>
-                  </p>
-                )}
-              </>
-            )}
-            {next === false ? null : (
-              <>
-                {next && (
-                  <p id='next-post'>
-                    <span className='navigation-name'>다음 포스트</span>
-                    <span className='navigation-link-'><Link to={`/${next.slug}`}>{next.frontmatter.title}</Link></span>
-                  </p>
-                )}
-              </>
-            )}
-          </div>
         </article>
+        <PostNavigation prev={prev} next={next} />
       </AppLayout>
     </>
   );
