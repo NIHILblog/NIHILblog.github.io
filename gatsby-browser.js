@@ -1,8 +1,8 @@
 import React from 'react';
 import { MDXProvider } from '@mdx-js/react';
 import {
-  H1, H2, H3, H4, P, Image, A, Strike, Strong, Q,
-  Code, Message, Em, Ol, Ul, Pre
+  H, P, Image, A, Strike, Strong, Q, Code, Message, Em,
+  Ol, Ul, Pre
 } from '@components/PostComponents';
 
 import 'prismjs/themes/prism-tomorrow.css';
@@ -10,10 +10,10 @@ import 'prismjs/plugins/line-numbers/prism-line-numbers.css';
 import 'prismjs/plugins/line-highlight/prism-line-highlight.css';
 
 const components = {
-  h1: props => <H1 {...props} />,
-  h2: props => <H2 {...props} />,
-  h3: props => <H3 {...props} />,
-  h4: props => <H4 {...props} />,
+  h1: props => <H type='1' {...props} />,
+  h2: props => <H type='2' {...props} />,
+  h3: props => <H type='3' {...props} />,
+  h4: props => <H type='4' {...props} />,
   inlineCode: props => <Code {...props} />,
   p: props => <P {...props} />,
   img: props => <Image {...props} />,

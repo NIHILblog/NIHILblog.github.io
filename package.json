@@ -1,6 +1,6 @@
 {
   "name": "nihil-blog",
-  "version": "1.2.0",
+  "version": "1.4.0",
   "description": "갯츠비 편하게 하려고 만든 템플릿",
   "main": "index.js",
   "repository": {
@@ -13,7 +13,7 @@
   "homepage": "https://github.com/nihilblog/nihilblog.github.io#readme",
   "scripts": {
     "serve": "gatsby clean && gatsby develop",
-    "build": "gatsby build --prefix-paths",
+    "build": "gatsby clean && gatsby build --prefix-paths",
     "clean": "gatsby clean"
   },
   "keywords": [],

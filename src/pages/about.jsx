@@ -5,8 +5,6 @@ import { Strong } from '@components/PostComponents';
 
 const siteData = {
   pageName: '소개',
-  pageDescription: '',
-  pageKeywords: '',
   pageUrl: '/about',
   pageType: 'website',
 };

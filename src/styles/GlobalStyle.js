@@ -94,6 +94,7 @@ export default css`
     .gatsby-highlight pre[class*="language-"],
     .gatsby-highlight,
     .gatsby-highlight button,
+    #blog-error-page p,
     #blog-footer a {font-size: ${size[1]};}
 
     /* 제목 텍스트 */
@@ -105,6 +106,7 @@ export default css`
     #blog-tag-page #tag-post-count h2,
     #blog-post-page #content-title,
     #post-content .post-heading-2,
+    #blog-error-page h2,
     #total-posts h2 {font-size: ${size[4]};}
 
     #blog-category-page #category-post-list .list-item .list-title,
@@ -169,6 +171,7 @@ export default css`
     .gatsby-highlight pre[class*="language-"],
     .gatsby-highlight,
     .gatsby-highlight button,
+    #blog-error-page p,
     #blog-footer a {font-size: ${size[2]};}
 
     /* 제목 텍스트 */
@@ -180,6 +183,7 @@ export default css`
     #blog-tag-page #tag-post-count h2,
     #blog-post-page #content-title,
     #post-content .post-heading-2,
+    #blog-error-page h2,
     #total-posts h2 {font-size: ${size[5]};}
 
     #blog-category-page #category-post-list .list-item .list-title,
@@ -247,6 +251,7 @@ export default css`
     .gatsby-highlight pre[class*="language-"],
     .gatsby-highlight,
     .gatsby-highlight button,
+    #blog-error-page p,
     #blog-footer a {font-size: ${size[3]};}
 
     /* 제목 텍스트 */
@@ -258,6 +263,7 @@ export default css`
     #blog-tag-page #tag-post-count h2,
     #blog-post-page #content-title,
     #post-content .post-heading-2,
+    #blog-error-page h2,
     #total-posts h2 {font-size: ${size[6]};}
 
     #blog-category-page #category-post-list .list-item .list-title,

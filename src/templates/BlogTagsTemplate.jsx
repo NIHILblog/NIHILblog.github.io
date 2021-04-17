@@ -4,8 +4,6 @@ import { graphql, Link } from 'gatsby';
 
 const siteData = {
   pageName: '태그 목록',
-  pageDescription: '',
-  pageKeywords: '',
   pageUrl: '/tags',
   pageType: 'website',
 };

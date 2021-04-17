@@ -1,3 +1,4 @@
+import { MainImage } from '@components/PostComponents/MainImage';
 import PostNavigation from '@components/PostNavigation';
 import AppLayout from '@layouts/AppLayout';
 import { graphql } from 'gatsby';
@@ -15,6 +16,7 @@ const BlogNoticeTemplate = ({ data, pageContext, }) => {
     pageKeywords: frontmatter.tag.join(', '),
     pageUrl: `/${slug}`,
     pageType: 'article',
+    pageImage: frontmatter.image ? frontmatter.image.publicURL : '',
   };
 
   return (
@@ -33,6 +35,11 @@ const BlogNoticeTemplate = ({ data, pageContext, }) => {
         <article id='blog-post-page'>
           <div id='post-metadata'>
             <h2 id='content-title'><i className='fas fa-bell' /> {frontmatter.title}</h2>
+            {
+              frontmatter.image
+                ? <MainImage src={frontmatter.image.publicURL} alt={frontmatter.title} />
+                : ''
+            }
             <div className='content-data'>
               <span className='item-name'><i className='far fa-clock' /> 작성 날짜</span>
               <time dateTime={frontmatter.createdAt}>{frontmatter.createString}</time>
@@ -65,6 +72,9 @@ export const query = graphql`
         title
         updatedAt
         updateString: updatedAt(formatString: "YYYY년 MM월 DD일 HH시 mm분")
+        image {
+          publicURL
+        }
       }
       slug
       body

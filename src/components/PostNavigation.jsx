@@ -1,5 +1,5 @@
-import { Link } from 'gatsby';
 import React from 'react';
+import { Link } from 'gatsby';
 
 const PostNavigation = ({ prev, next, }) => {
   return (
@@ -9,12 +9,12 @@ const PostNavigation = ({ prev, next, }) => {
           prev === null
             ? (
               <p className='nav-button'>
-                <span>이전 포스트가 없습니다.</span>
+                <span className='message'><span>이전 포스트</span>이전 포스트가 없습니다.</span>
               </p>
             )
             : (prev && (
               <p className='nav-button'>
-                <Link className='nav-link' to={`/${prev.slug}`}>{prev.frontmatter.title}</Link>
+                <Link className='nav-link' to={`/${prev.slug}`}><span>이전 포스트</span>{prev.frontmatter.title}</Link>
               </p>
             ))
         }
@@ -22,12 +22,12 @@ const PostNavigation = ({ prev, next, }) => {
           next === null
             ? (
               <p className='nav-button'>
-                <span>다음 포스트가 없습니다.</span>
+                <span className='message'>다음 포스트가 없습니다.<span>다음 포스트</span></span>
               </p>
             )
             : (next && (
               <p className='nav-button'>
-                <Link className='nav-link' to={`/${next.slug}`}>{next.frontmatter.title}</Link>
+                <Link className='nav-link' to={`/${next.slug}`}>{next.frontmatter.title}<span>다음 포스트</span></Link>
               </p>
             ))
         }

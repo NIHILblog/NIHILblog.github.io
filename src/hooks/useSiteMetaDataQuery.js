@@ -11,6 +11,7 @@ export const useSiteMetaDataQuery = () => {
           title
           url
           keywords
+          siteImage
         }
       }
     }

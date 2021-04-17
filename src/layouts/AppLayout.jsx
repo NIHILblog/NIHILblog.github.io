@@ -9,21 +9,25 @@ import NavContainer from '@components/NavContainer';
 import BlogPageContainer from '@components/BlogPageContainer';
 import Prism from 'prismjs';
 
-const AppLayout = ({ children, pageName, pageDescription, pageKeywords, pageUrl, pageType, }) => {
+const AppLayout = ({ children, pageName, pageDescription, pageKeywords, pageUrl, pageType, pageImage, }) => {
   useEffect(() => {
     Prism.highlightAll();
   });
   
-  const { title, generator, author, url, description, keywords, } = useSiteMetaDataQuery();
+  const { title, generator, author, url, description, keywords, siteImage, } = useSiteMetaDataQuery();
   const siteData = {};
 
   if (pageDescription === '') {
     siteData.description = description;
     siteData.keywords = keywords;
+    siteData.image = siteImage;
   } else {
-    siteData.description = pageDescription;
-    siteData.keywords = pageKeywords;
+    siteData.description = pageDescription ? pageDescription : description;
+    siteData.keywords = pageKeywords ? pageKeywords : keywords;
+    siteData.image = pageImage ? pageImage : siteImage;
   }
+
+  console.log(siteData.image);
 
   return (
     <>
@@ -42,7 +46,7 @@ const AppLayout = ({ children, pageName, pageDescription, pageKeywords, pageUrl,
         <meta property='og:type' content={pageType} />
         <meta property='og:title' content={pageName} />
         <meta property='og:description' content={siteData.description} />
-        {/* <meta property='og:image' content={pageImage} /> */}
+        <meta property='og:image' content={siteData.image} />
         <meta property='og:locale' content='ko_KR' />
         <meta property='og:url' content={`${url}${pageUrl}`} />
 
@@ -52,7 +56,7 @@ const AppLayout = ({ children, pageName, pageDescription, pageKeywords, pageUrl,
         <meta name='twitter:title' content={`${pageName} - ${title}`} />
         <meta name='twitter:creator' content={`@${author}`} />
         <meta name='twitter:description' content={siteData.description} />
-        {/* <meta name='twitter:image' content={pageImage} /> */}
+        <meta name='twitter:image' content={siteData.image} />
 
         {/* 검색등록 */}
       </Helmet>

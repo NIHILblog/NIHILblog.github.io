@@ -44,6 +44,7 @@ export default css`
   & > #blog-tag-page #tag-post-list .list-item,
   & > #blog-post-page,
   & > #post-navigation,
+  & > #blog-error-page,
   & > #blog-info-page .info-block {
     background-color: #ffffff;
     padding: 10px;
@@ -390,17 +391,31 @@ export default css`
             background-color: #333333;
             border: 2px solid #333333;
             transition: all 0.3s;
+
+            & > span {
+              color: #333333;
+              background-color: #ffffff;
+            }
           }
 
-          &:before {
-            content: '\\f359';
-            font-family: 'Font Awesome 5 Free';
-            font-weight: 900;
+          & > span {
+            color: #ffffff;
+            background-color: #555555;
+            border-radius: 10px;
+            padding: 0px 10px;
             margin-right: 5px;
+            transition: all 0.3s;
+
+            &:before {
+              content: '\\f359';
+              font-family: 'Font Awesome 5 Free';
+              font-weight: 900;
+              margin-right: 5px;
+            }
           }
         }
 
-        & > span {
+        & > .message {
           display: block;
           border: 2px solid #55555550;
           color: #55555550;
@@ -410,11 +425,20 @@ export default css`
           text-align: left;
           transition: all 0.3s;
 
-          &:before {
-            content: '\\f359';
-            font-family: 'Font Awesome 5 Free';
-            font-weight: 900;
-            margin-right: 5px;
+          & > span {
+            color: #ffffffb0;
+            background-color: #55555550;
+            border-radius: 10px;
+            padding: 0px 10px;
+            margin-left: 5px;
+            transition: all 0.3s;
+
+            &:before {
+              content: '\\f359';
+              font-family: 'Font Awesome 5 Free';
+              font-weight: 900;
+              margin-right: 5px;
+            }
           }
         }
       }
@@ -435,17 +459,31 @@ export default css`
             background-color: #333333;
             border: 2px solid #333333;
             transition: all 0.3s;
+
+            & > span {
+              color: #333333;
+              background-color: #ffffff;
+            }
           }
 
-          &:after {
-            content: '\\f35a';
-            font-family: 'Font Awesome 5 Free';
-            font-weight: 900;
+          & > span {
+            color: #ffffff;
+            background-color: #555555;
+            border-radius: 10px;
+            padding: 0px 10px;
             margin-left: 5px;
+            transition: all 0.3s;
+
+            &:after {
+              content: '\\f35a';
+              font-family: 'Font Awesome 5 Free';
+              font-weight: 900;
+              margin-left: 5px;
+            }
           }
         }
 
-        & > span {
+        & > .message {
           display: block;
           border: 2px solid #55555550;
           color: #55555550;
@@ -455,11 +493,20 @@ export default css`
           text-align: right;
           transition: all 0.3s;
 
-          &:after {
-            content: '\\f35a';
-            font-family: 'Font Awesome 5 Free';
-            font-weight: 900;
+          & > span {
+            color: #ffffffb0;
+            background-color: #55555550;
+            border-radius: 10px;
+            padding: 0px 10px;
             margin-left: 5px;
+            transition: all 0.3s;
+
+            &:after {
+              content: '\\f35a';
+              font-family: 'Font Awesome 5 Free';
+              font-weight: 900;
+              margin-left: 5px;
+            }
           }
         }
       }
@@ -489,6 +536,47 @@ export default css`
       font-weight: 500;
       transition: all 0.3s;
       text-indent: 10px;
+    }
+  }
+
+  /* 에러 페이지 */
+  & > #blog-error-page {
+    & > h2 {
+      background-color: #333333;
+      padding: 10px;
+      border-radius: 10px;
+      margin-bottom: 20px;
+      color: #ffffff;
+      font-weight: 500;
+      letter-spacing: -1px;
+      transition: all 0.3s;
+
+      &:before {
+        content: '\\f00d';
+        font-weight: 900;
+        font-family: 'Font Awesome 5 Free';
+        margin-right: 10px;
+      }
+    }
+
+    & > img {
+      border-radius: 100%;
+      display: block;
+      max-width: 50%;
+      margin: 0px auto;
+    }
+
+    & > p {
+      letter-spacing: -1px;
+      color: #333333;
+      margin-top: 20px;
+      text-align: center;
+      font-weight: 900;
+      transition: all 0.3s;
+
+      & > span {
+        font-size: 150%;
+      }
     }
   }
 `;

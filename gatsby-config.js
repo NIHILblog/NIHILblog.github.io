@@ -9,6 +9,7 @@ module.exports = {
     generator: 'Visual Studio Code',
     url: 'https://nihilblog.github.io',
     keywords: '블로그, 코딩, 프로그래밍, 웹 프로그래밍, Blog, Coding, Programing, Web programing, 일본어, 일본어 공부, 게임, 게임 정보, Japanese, Japanese learning, Game, Game play',
+    siteImage: `/images/blog-image.png`,
   },
   plugins: [
     'gatsby-plugin-react-helmet',

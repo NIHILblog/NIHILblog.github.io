@@ -4,8 +4,6 @@ import { graphql, Link } from 'gatsby';
 
 const siteData = {
   pageName: '카테고리 목록',
-  pageDescription: '',
-  pageKeywords: '',
   pageUrl: '/categories',
   pageType: 'website',
 };
