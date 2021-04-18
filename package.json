@@ -13,7 +13,7 @@
   "homepage": "https://github.com/nihilblog/nihilblog.github.io#readme",
   "scripts": {
     "serve": "gatsby clean && gatsby develop",
-    "build": "gatsby clean && gatsby build --prefix-paths",
+    "build": "gatsby clean && gatsby build --prefix-paths && rm -rf blog && mv public blog",
     "clean": "gatsby clean"
   },
   "keywords": [],
