@@ -44,16 +44,16 @@ const NavContainer = () => {
           <Link to='/about/'><i className='fas fa-info-circle' /> 소개</Link>
         </span>
         <span id='link-notice-page'>
-          <Link to='/notice/page/1'><i className='fas fa-bell' /> 공지</Link>
+          <Link to='/notice/page/1#top'><i className='fas fa-bell' /> 공지</Link>
         </span>
         <span id='link-page'>
-          <Link to='/page/1'><i className='fas fa-align-justify' /> 포스트</Link>
+          <Link to='/page/1#top'><i className='fas fa-align-justify' /> 포스트</Link>
         </span>
         <span id='link-category'>
-          <Link to='/categories/'><i className='fas fa-folder' /> 카테고리</Link>
+          <Link to='/categories/#top'><i className='fas fa-folder' /> 카테고리</Link>
         </span>
         <span id='link-tag'>
-          <Link to='/tags/'><i className='fas fa-tags' /> 태그</Link>
+          <Link to='/tags/#top'><i className='fas fa-tags' /> 태그</Link>
         </span>
       </nav>
     </>

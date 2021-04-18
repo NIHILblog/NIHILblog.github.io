@@ -9,7 +9,7 @@ display: true
 notice: false
 ---
 
-import { A, Message, Q, P, H, Score, Bold, Quote } from '@components/PostComponents'
+import { A, Message, Q, P, H, Score, Bold, Quote, Details, Gray } from '@components/PostComponents'
 
 # 제목을 적어본다. h2 태그로 변환된다.
 
@@ -26,6 +26,7 @@ import { A, Message, Q, P, H, Score, Bold, Quote } from '@components/PostCompone
 이것은 긴 문장이다. 이것은 긴 문장이다. 이것은 긴 문장이다. 이것은 긴 문장이다. 이것은 긴 문장이다. 이것은 긴 문장이다. 이것은 긴 문장이다. 이것은 긴 문장이다. 이것은 긴 문장이다. 이것<A href='#' type='normal'>중간에 링크!</A>은 긴 문장이다. 이것은 긴 문장이다. 이것은 긴 문장이다. 이것은 긴 문장이다. 이것은 긴 문장이다. 이것은 긴 문장이다. 이것은 긴 문장이다. 이것은 긴 문장이다. 이정도면 될 것 같다.
 
 > 이것은 인용문이다. 블럭 인용문이다. 스타일 조정이 필요한데,
+>
 > 솔직히 컴포넌트를 사용할 것 같다.
 
 이것은 <Q>인용 태그이다. 인라인 인용이다.</Q>
@@ -126,3 +127,7 @@ console.log('Hello World!!');
 <Quote who='장만월(호텔 델루나)'>
   그러게, <Bold>슬프게.</Bold> 난 좀.. 슬퍼졌어. 아까 보던 바다보다, 지금 보는 바다가 더.. <Bold>예뻐져서.</Bold>
 </Quote>
+
+<Details>
+  클릭하면 이 문구가 나타나요. <A href='/2021/2021-04-13-02-the-sixth-post' type='blog'>여섯번째 포스트</A>
+</Details>

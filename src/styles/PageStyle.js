@@ -109,6 +109,11 @@ export default css`
             transition: all 0.3s;
           }
 
+          & > .list-description {
+            line-height: 1.5;
+            text-indent: 10px;
+          }
+
           & > .info-tag,
           & > .info-category {
             letter-spacing: -1px;
@@ -506,6 +511,7 @@ export default css`
       font-weight: 500;
       transition: all 0.3s;
       text-indent: 10px;
+      line-height: 1.8;
     }
   }
 

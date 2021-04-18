@@ -16,3 +16,4 @@ export * from './Score';
 export * from './Gray';
 export * from './Quote';
 export * from './Bold';
+export * from './Details';

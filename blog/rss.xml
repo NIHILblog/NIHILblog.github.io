@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[RSS - 니힐 블로그]]></title><description><![CDATA[블로그를 운영할 필요를 느꼈으나 네이버나 티스토리에 질려서 직접 GatsbyJS로 개발한 블로그이고, HTML, CSS, JavaScript 기술을 이용한 웹 개발 위주의 프로그래밍과 일본어 학습자료, 그리고 게임 관련된 컨텐츠를 다루는 블로그입니다.]]></description><link>http://github.com/dylang/node-rss</link><generator>GatsbyJS</generator><lastBuildDate>Sun, 18 Apr 2021 01:13:41 GMT</lastBuildDate><item><title><![CDATA[이번에는 공지 테스트를 해보도록 하자]]></title><description><![CDATA[공지 내용은 없습니다! 아니 그럼 왜 공지를 적은거야! 이 포스트는 일반적인 목록에서는 보이지 않습니다.]]></description><link>https://nihilblog.github.ionotice/2021/2021-04-15-02-notice-test-post/</link><guid isPermaLink="false">https://nihilblog.github.ionotice/2021/2021-04-15-02-notice-test-post/</guid><pubDate>Wed, 14 Apr 2021 21:14:00 GMT</pubDate><content:encoded>function _extends() { _extends = Object.assign || function (target) { for (var i = 1; i &lt; arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; }; return _extends.apply(this, arguments); }
+<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[RSS - 니힐 블로그]]></title><description><![CDATA[블로그를 운영할 필요를 느꼈으나 네이버나 티스토리에 질려서 직접 GatsbyJS로 개발한 블로그이고, HTML, CSS, JavaScript 기술을 이용한 웹 개발 위주의 프로그래밍과 일본어 학습자료, 그리고 게임 관련된 컨텐츠를 다루는 블로그입니다.]]></description><link>http://github.com/dylang/node-rss</link><generator>GatsbyJS</generator><lastBuildDate>Sun, 18 Apr 2021 14:31:55 GMT</lastBuildDate><item><title><![CDATA[이번에는 공지 테스트를 해보도록 하자]]></title><description><![CDATA[공지 내용은 없습니다! 아니 그럼 왜 공지를 적은거야! 이 포스트는 일반적인 목록에서는 보이지 않습니다.]]></description><link>https://nihilblog.github.ionotice/2021/2021-04-15-02-notice-test-post/</link><guid isPermaLink="false">https://nihilblog.github.ionotice/2021/2021-04-15-02-notice-test-post/</guid><pubDate>Wed, 14 Apr 2021 21:14:00 GMT</pubDate><content:encoded>function _extends() { _extends = Object.assign || function (target) { for (var i = 1; i &lt; arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; }; return _extends.apply(this, arguments); }
 
 function _objectWithoutProperties(source, excluded) { if (source == null) return {}; var target = _objectWithoutPropertiesLoose(source, excluded); var key, i; if (Object.getOwnPropertySymbols) { var sourceSymbolKeys = Object.getOwnPropertySymbols(source); for (i = 0; i &lt; sourceSymbolKeys.length; i++) { key = sourceSymbolKeys[i]; if (excluded.indexOf(key) &gt;= 0) continue; if (!Object.prototype.propertyIsEnumerable.call(source, key)) continue; target[key] = source[key]; } } return target; }
 
@@ -50,15 +50,6 @@ var _frontmatter = {
   &quot;display&quot;: true,
   &quot;notice&quot;: false
 };
-
-var makeShortcode = function makeShortcode(name) {
-  return function MDXDefaultShortcode(props) {
-    console.warn(&quot;Component &quot; + name + &quot; was not imported, exported, or provided by MDXProvider as global scope&quot;);
-    return mdx(&quot;div&quot;, props);
-  };
-};
-
-var Gray = makeShortcode(&quot;Gray&quot;);
 var layoutProps = {
   _frontmatter: _frontmatter
 };
@@ -87,7 +78,9 @@ return function MDXContent(_ref) {
     mdxType: &quot;A&quot;
   }, &quot;\uC911\uAC04\uC5D0 \uB9C1\uD06C!&quot;), &quot;\uC740 \uAE34 \uBB38\uC7A5\uC774\uB2E4. \uC774\uAC83\uC740 \uAE34 \uBB38\uC7A5\uC774\uB2E4. \uC774\uAC83\uC740 \uAE34 \uBB38\uC7A5\uC774\uB2E4. \uC774\uAC83\uC740 \uAE34 \uBB38\uC7A5\uC774\uB2E4. \uC774\uAC83\uC740 \uAE34 \uBB38\uC7A5\uC774\uB2E4. \uC774\uAC83\uC740 \uAE34 \uBB38\uC7A5\uC774\uB2E4. \uC774\uAC83\uC740 \uAE34 \uBB38\uC7A5\uC774\uB2E4. \uC774\uAC83\uC740 \uAE34 \uBB38\uC7A5\uC774\uB2E4. \uC774\uC815\uB3C4\uBA74 \uB420 \uAC83 \uAC19\uB2E4.&quot;), mdx(&quot;blockquote&quot;, null, mdx(&quot;p&quot;, {
     parentName: &quot;blockquote&quot;
-  }, &quot;\uC774\uAC83\uC740 \uC778\uC6A9\uBB38\uC774\uB2E4. \uBE14\uB7ED \uC778\uC6A9\uBB38\uC774\uB2E4. \uC2A4\uD0C0\uC77C \uC870\uC815\uC774 \uD544\uC694\uD55C\uB370,\n\uC194\uC9C1\uD788 \uCEF4\uD3EC\uB10C\uD2B8\uB97C \uC0AC\uC6A9\uD560 \uAC83 \uAC19\uB2E4.&quot;)), mdx(&quot;p&quot;, null, &quot;\uC774\uAC83\uC740 &quot;, mdx(Q, {
+  }, &quot;\uC774\uAC83\uC740 \uC778\uC6A9\uBB38\uC774\uB2E4. \uBE14\uB7ED \uC778\uC6A9\uBB38\uC774\uB2E4. \uC2A4\uD0C0\uC77C \uC870\uC815\uC774 \uD544\uC694\uD55C\uB370,&quot;), mdx(&quot;p&quot;, {
+    parentName: &quot;blockquote&quot;
+  }, &quot;\uC194\uC9C1\uD788 \uCEF4\uD3EC\uB10C\uD2B8\uB97C \uC0AC\uC6A9\uD560 \uAC83 \uAC19\uB2E4.&quot;)), mdx(&quot;p&quot;, null, &quot;\uC774\uAC83\uC740 &quot;, mdx(Q, {
     mdxType: &quot;Q&quot;
   }, &quot;\uC778\uC6A9 \uD0DC\uADF8\uC774\uB2E4. \uC778\uB77C\uC778 \uC778\uC6A9\uC774\uB2E4.&quot;)), mdx(&quot;ul&quot;, null, mdx(&quot;li&quot;, {
     parentName: &quot;ul&quot;
@@ -270,7 +263,13 @@ return function MDXContent(_ref) {
     mdxType: &quot;Bold&quot;
   }, &quot;\uC2AC\uD504\uAC8C.&quot;), &quot; \uB09C \uC880.. \uC2AC\uD37C\uC84C\uC5B4. \uC544\uAE4C \uBCF4\uB358 \uBC14\uB2E4\uBCF4\uB2E4, \uC9C0\uAE08 \uBCF4\uB294 \uBC14\uB2E4\uAC00 \uB354.. &quot;, mdx(Bold, {
     mdxType: &quot;Bold&quot;
-  }, &quot;\uC608\uBED0\uC838\uC11C.&quot;)));
+  }, &quot;\uC608\uBED0\uC838\uC11C.&quot;)), mdx(Details, {
+    mdxType: &quot;Details&quot;
+  }, &quot;\uD074\uB9AD\uD558\uBA74 \uC774 \uBB38\uAD6C\uAC00 \uB098\uD0C0\uB098\uC694. &quot;, mdx(A, {
+    href: &quot;/2021/2021-04-13-02-the-sixth-post&quot;,
+    type: &quot;blog&quot;,
+    mdxType: &quot;A&quot;
+  }, &quot;\uC5EC\uC12F\uBC88\uC9F8 \uD3EC\uC2A4\uD2B8&quot;)));
 }
 ;
 MDXContent.isMDXComponent = true;</content:encoded></item><item><title><![CDATA[제목을 적는다아아아아아아아아아아아]]></title><description><![CDATA[제목은 역시 여기에 적으면 된다. 내용을 여기에 적는다. 테스트하기 귀찮다. 언제 끝날까. 페이지만 구현하면 일단은 자유의 몸이 될 것 같다.]]></description><link>https://nihilblog.github.io2021/2021-04-13-02-the-sixth-post/</link><guid isPermaLink="false">https://nihilblog.github.io2021/2021-04-13-02-the-sixth-post/</guid><pubDate>Tue, 13 Apr 2021 05:19:00 GMT</pubDate><content:encoded>function _extends() { _extends = Object.assign || function (target) { for (var i = 1; i &lt; arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; }; return _extends.apply(this, arguments); }

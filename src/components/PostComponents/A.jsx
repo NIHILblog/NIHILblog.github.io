@@ -1,5 +1,6 @@
 import React from 'react';
 import { css } from '@emotion/react';
+import { Link } from 'gatsby';
 
 export const A = ({ children, href, type = 'blog', }) => {
   let typeColor;
@@ -8,7 +9,7 @@ export const A = ({ children, href, type = 'blog', }) => {
 
   if (type === 'blog') {
     typeColor = '#218cd8';
-    typeProps.href = href;
+    typeProps.to = href;
     icon.code = 'f0c1';
     icon.type = 'Free';
   } else if (type === 'normal') {
@@ -50,7 +51,15 @@ export const A = ({ children, href, type = 'blog', }) => {
 
   return (
     <>
-      <a css={style} {...typeProps}>{children}</a>
+      {
+        type === 'blog'
+          ? (
+            <Link css={style} {...typeProps}>{children}</Link>
+          )
+          : (
+            <a css={style} {...typeProps}>{children}</a>
+          )
+      }
     </>
   );
 };

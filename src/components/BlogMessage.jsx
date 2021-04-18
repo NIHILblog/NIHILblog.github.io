@@ -37,6 +37,7 @@ const BlogMessage = ({ top = 0, bottom = 30, }) => {
       font-weight: 500;
       transition: all 0.3s;
       text-indent: 10px;
+      line-height: 1.8;
     }
   `;
 

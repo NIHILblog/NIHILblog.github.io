@@ -14,7 +14,7 @@ const PostNavigation = ({ prev, next, }) => {
             )
             : (prev && (
               <p className='nav-button'>
-                <Link className='nav-link' to={`/${prev.slug}`}><span>이전 포스트</span>{prev.frontmatter.title}</Link>
+                <Link className='nav-link' to={`/${prev.slug}#top`}><span>이전 포스트</span>{prev.frontmatter.title}</Link>
               </p>
             ))
         }
@@ -27,7 +27,7 @@ const PostNavigation = ({ prev, next, }) => {
             )
             : (next && (
               <p className='nav-button'>
-                <Link className='nav-link' to={`/${next.slug}`}>{next.frontmatter.title}<span>다음 포스트</span></Link>
+                <Link className='nav-link' to={`/${next.slug}#top`}>{next.frontmatter.title}<span>다음 포스트</span></Link>
               </p>
             ))
         }

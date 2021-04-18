@@ -21,6 +21,7 @@ const BlogNoticeListTemplate = ({ data, pageContext, }) => {
     <>
       <AppLayout {...siteData}>
         <div id='post-list-page'>
+          <div id='top'></div>
           <section className='Paginator'>
             <Paginator {...props} />
           </section>
@@ -28,7 +29,7 @@ const BlogNoticeListTemplate = ({ data, pageContext, }) => {
             {data.allMdx.nodes.map((post) => (
               <div className='list-item' key={post.id}>
                 <h3 className='list-title'>
-                  <Link to={`/${post.slug}`}><i className='fas fa-bell' /> {post.frontmatter.title}</Link>
+                  <Link to={`/${post.slug}#top`}><i className='fas fa-bell' /> {post.frontmatter.title}</Link>
                 </h3>
                 <div className='list-content'>
                   <p className='content-info'>

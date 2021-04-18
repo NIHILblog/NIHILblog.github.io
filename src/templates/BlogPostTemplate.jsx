@@ -33,6 +33,7 @@ const BlogPostTemplate = ({ data, pageContext, }) => {
 
       <AppLayout {...siteData}>
         <article id='blog-post-page'>
+          <div id='top'></div>
           <div id='post-metadata'>
             <h2 id='content-title'><i className='fas fa-comment-alt' /> {frontmatter.title}</h2>
             {
@@ -52,7 +53,7 @@ const BlogPostTemplate = ({ data, pageContext, }) => {
               <span className='item-name'><i className='fas fa-folder-open' /> 카테고리</span>
               <span className='item-items-list'>
                 {frontmatter.category.map((item, index) => (
-                  <Link to={`/categories/${item}`} className='list-item' key={index}>
+                  <Link to={`/categories/${item}#top`} className='list-item' key={index}>
                     <i className='fas fa-folder-open' /> {item}
                   </Link>
                 ))}
@@ -62,7 +63,7 @@ const BlogPostTemplate = ({ data, pageContext, }) => {
               <span className='item-name'><i className='fas fa-tags' /> 태그</span>
               <span className='item-items-list'>
                 {frontmatter.tag.map((item, index) => (
-                  <Link to={`/tags/${item}`} className='list-item' key={index}>
+                  <Link to={`/tags/${item}#top`} className='list-item' key={index}>
                     <i className='fas fa-tag' /> {item}
                   </Link>
                 ))}
