@@ -40,6 +40,7 @@ export const Details = ({ children, close = '펼치기', open = '접기', top = 
         &:hover {
           color: #ffffff;
           background-color: #333333;
+          border: 2px solid #333333;
         }
 
         &:before {

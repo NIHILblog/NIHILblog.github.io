@@ -21,7 +21,6 @@ const BlogPostsTemplate = ({ data, pageContext, }) => {
     <>
       <AppLayout {...siteData}>
         <div id='post-list-page'>
-          <div id='top'></div>
           <section className='Paginator'>
             <Paginator {...props} />
           </section>
@@ -29,7 +28,7 @@ const BlogPostsTemplate = ({ data, pageContext, }) => {
             {data.allMdx.nodes.map((post) => (
               <div className='list-item' key={post.id}>
                 <h3 className='list-title'>
-                  <Link to={`/${post.slug}#top`}><i className='fas fa-comment-alt' /> {post.frontmatter.title}</Link>
+                  <Link to={`/${post.slug}`}><i className='fas fa-comment-alt' /> {post.frontmatter.title}</Link>
                 </h3>
                 <div className='list-content'>
                   <p className='content-info'>
@@ -46,7 +45,7 @@ const BlogPostsTemplate = ({ data, pageContext, }) => {
                   <p className='content-info'>
                     <span className='info-name'><i className='fas fa-folder-open' /> 카테고리</span>
                     {post.frontmatter.category.map((item, index) => (
-                      <Link to={`/categories/${item}#top`} className='info-category' key={`${item}-${index}`}>
+                      <Link to={`/categories/${item}`} className='info-category' key={`${item}-${index}`}>
                         <i className='fas fa-folder-open' /> {item}
                       </Link>
                     ))}
@@ -54,7 +53,7 @@ const BlogPostsTemplate = ({ data, pageContext, }) => {
                   <p className='content-info'>
                     <span className='info-name'><i className='fas fa-tags' /> 태그</span>
                     {post.frontmatter.tag.map((item, index) => (
-                      <Link to={`/tags/${item}#top`} className='info-tag' key={`${item}-${index}`}>
+                      <Link to={`/tags/${item}`} className='info-tag' key={`${item}-${index}`}>
                         <i className='fas fa-tag' /> {item}
                       </Link>
                     ))}

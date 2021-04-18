@@ -33,7 +33,6 @@ const BlogNoticeTemplate = ({ data, pageContext, }) => {
 
       <AppLayout {...siteData}>
         <article id='blog-post-page'>
-          <div id='top'></div>
           <div id='post-metadata'>
             <h2 id='content-title'><i className='fas fa-bell' /> {frontmatter.title}</h2>
             {

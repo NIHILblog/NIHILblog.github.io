@@ -1,0 +1,85 @@
+@import url(https://fonts.googleapis.com/earlyaccess/notosanskr.css);
+
+* {
+  padding: 0px;
+  margin: 0px;
+  font-family: 'Noto Sans CJK KR', sans-serif;
+}
+
+a {
+  text-decoration: none;
+}
+
+html, body, #blog-main {
+  height: 100%;
+  width: 100%;
+}
+
+#blog-main {
+  display: flex;
+  flex-direction: column;
+  background-color: #333333;
+  align-items: center;
+  justify-items: center;
+  justify-self: center;
+  justify-content: center;
+}
+
+#blog-main h1 {
+  width: 100%;
+  flex: 1;
+  display: flex;
+  margin-bottom: 10px;
+}
+
+#blog-main h1 > img {
+  width: 80%;
+  margin: 0px auto;
+  transition: all 0.3s;
+}
+
+#blog-main > div {
+  text-align: center;
+}
+
+#blog-main > div a {
+  font-weight: 500;
+  border: 2px solid #ffffff;
+  color: #ffffff;
+  padding: 5px 10px;
+  box-shadow: 0px 0px 10px -4px #ffffff;
+  transition: all 0.3s;
+  box-sizing: border-box;
+  display: inline-block;
+  border-radius: 20px;
+  font-size: 5vw;
+}
+
+#blog-main > div a:before {
+  content: '\f0a9';
+  margin-right: 5px;
+  font-weight: 900;
+  font-family: 'Font Awesome 5 Free';
+}
+
+#blog-main > div a:hover {
+  transition: all 0.3s;
+  color: #333333;
+  background-color: #ffffff;
+}
+
+#blog-main > div small {
+  color: #ffffff;
+  margin-top: 50px;
+  display: block;
+  font-size: 3vw;
+  transition: all 0.3s;
+}
+
+#blog-main > div small:before {
+  content: '\f1f9';
+  font-weight: 500;
+  font-family: 'Font Awesome 5 Free';
+  margin-right: 5px;
+  color: #ffffff;
+}

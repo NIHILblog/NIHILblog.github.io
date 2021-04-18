@@ -25,12 +25,12 @@ const Paginator = ({ currentPage, numPages, type, }) => {
     <>
       {
         !isFirst
-          ? <Link to={`${Path}1#top`} className='page-link' rel='prev'><i className='fas fa-angle-double-left' /></Link>
+          ? <Link to={`${Path}1`} className='page-link' rel='prev'><i className='fas fa-angle-double-left' /></Link>
           : <span><i className='fas fa-angle-double-left false' /></span>
       }
       {
         !isFirst
-          ? <Link to={`${prevPage}#top`} className='page-link' rel='prev'><i className='fas fa-angle-left' /></Link>
+          ? <Link to={`${prevPage}`} className='page-link' rel='prev'><i className='fas fa-angle-left' /></Link>
           : <span><i className='fas fa-angle-left false' /></span>
       }
       {
@@ -39,7 +39,7 @@ const Paginator = ({ currentPage, numPages, type, }) => {
             <Link
               key={`${Path}${currentPage + number}`}
               className='page-link link-num'
-              to={`${Path}${currentPage + number}#top`}
+              to={`${Path}${currentPage + number}`}
             >
               {currentPage + number}
             </Link>
@@ -48,12 +48,12 @@ const Paginator = ({ currentPage, numPages, type, }) => {
       }
       {
         !isLast
-          ? <Link to={`${nextPage}#top`} className='page-link' rel='next'><i className='fas fa-angle-right' /></Link>
+          ? <Link to={`${nextPage}`} className='page-link' rel='next'><i className='fas fa-angle-right' /></Link>
           : <span><i className='fas fa-angle-right false' /></span>
       }
       {
         !isLast
-          ? <Link to={`${Path}${numPages}#top`} className='page-link' rel='next'><i className='fas fa-angle-double-right' /></Link>
+          ? <Link to={`${Path}${numPages}`} className='page-link' rel='next'><i className='fas fa-angle-double-right' /></Link>
           : <span><i className='fas fa-angle-double-right false' /></span>
       }
     </>

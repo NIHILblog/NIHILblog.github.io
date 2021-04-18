@@ -15,7 +15,6 @@ const BlogCategoriesTemplate = ({ data, }) => {
     <>
       <AppLayout {...siteData}>
         <div id='blog-categories-page'>
-          <div id='top'></div>
           <section id='items-preview'>
             <div id='item-list-name'>
               <h2>카테고리 목록</h2>
@@ -23,7 +22,7 @@ const BlogCategoriesTemplate = ({ data, }) => {
             </div>
             <p id='item-list'>
               {group && group.map((category, index) => (
-                <Link to={`/categories/${category.fieldValue}#top`} className='list-item' key={index}>
+                <Link to={`/categories/${category.fieldValue}`} className='list-item' key={index}>
                   <i className='fas fa-folder-open' /> {category.fieldValue} ({category.totalCount}건)
                 </Link>
               ))}

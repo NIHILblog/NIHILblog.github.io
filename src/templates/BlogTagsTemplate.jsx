@@ -15,7 +15,6 @@ const BlogTagsTemplate = ({ data, }) => {
     <>
       <AppLayout {...siteData}>
         <div id='blog-tags-page'>
-          <div id='top'></div>
           <section id='items-preview'>
             <div id='item-list-name'>
               <h2>태그 목록</h2>
@@ -23,7 +22,7 @@ const BlogTagsTemplate = ({ data, }) => {
             </div>
             <p id='item-list'>
               {group && group.map((tag, index) => (
-                <Link to={`/tags/${tag.fieldValue}#top`} className='list-item' key={index}>
+                <Link to={`/tags/${tag.fieldValue}`} className='list-item' key={index}>
                   <i className='fas fa-tag' /> {tag.fieldValue} ({tag.totalCount}건)
                 </Link>
               ))}

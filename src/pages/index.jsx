@@ -21,7 +21,7 @@ const App = ({ data, }) => {
             {data.allMdx.nodes.map(({ frontmatter, id, slug, excerpt, }) => (
               <div className='list-item' key={id}>
                 <h3 className='list-title'>
-                  <Link to={`/${slug}#top`}><i className='fas fa-comment-alt' /> {frontmatter.title}</Link>
+                  <Link to={`/${slug}`}><i className='fas fa-comment-alt' /> {frontmatter.title}</Link>
                 </h3>
                 <div className='list-content'>
                   <p className='content-info'>
@@ -38,7 +38,7 @@ const App = ({ data, }) => {
                   <p className='content-info'>
                     <span className='info-name'><i className='fas fa-folder-open' /> 카테고리</span>
                     {frontmatter.category.map((item, index) => (
-                      <Link to={`/categories/${item}#top`} className='info-category' key={`${item}-${index}`}>
+                      <Link to={`/categories/${item}`} className='info-category' key={`${item}-${index}`}>
                         <i className='fas fa-folder-open' /> {item}
                       </Link>
                     ))}
@@ -46,7 +46,7 @@ const App = ({ data, }) => {
                   <p className='content-info'>
                     <span className='info-name'><i className='fas fa-tags' /> 태그</span>
                     {frontmatter.tag.map((item, index) => (
-                      <Link to={`/tags/${item}#top`} className='info-tag' key={`${item}-${index}`}>
+                      <Link to={`/tags/${item}`} className='info-tag' key={`${item}-${index}`}>
                         <i className='fas fa-tag' /> {item}
                       </Link>
                     ))}
