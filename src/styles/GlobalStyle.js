@@ -33,6 +33,24 @@ export default css`
     font-family: 'Noto Sans CJK KR', sans-serif;
   }
 
+  ::selection {
+    color: #ffffff;
+    background-color: #f54747;
+  }
+
+  ::-webkit-scrollbar {
+    width: 20px;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    background-color: #222222;
+    border-radius: 5px;
+  }
+
+  ::-webkit-scrollbar-track {
+    background-color: #33333350;
+  }
+
   body {
     background-color: #cccccc;
     & main {padding: 0px 20px;}
@@ -51,7 +69,6 @@ export default css`
     #blog-header .small-text,
     #blog-footer .small-text,
     #blog-menu a,
-    #blog-message p,
     #total-posts p,
     #blog-post-list .list-item .list-content .info-name,
     #blog-post-list .list-item .list-content .list-description,
@@ -98,7 +115,6 @@ export default css`
     #blog-footer a {font-size: ${size[1]};}
 
     /* 제목 텍스트 */
-    #blog-message h2,
     #blog-info-page .block-title,
     #blog-categories-page #item-list-name h2,
     #blog-tags-page #item-list-name h2,
@@ -128,7 +144,6 @@ export default css`
     #blog-header .small-text,
     #blog-footer .small-text,
     #blog-menu a,
-    #blog-message p,
     #total-posts p,
     #blog-post-list .list-item .list-content .info-name,
     #blog-post-list .list-item .list-content .list-description,
@@ -175,7 +190,6 @@ export default css`
     #blog-footer a {font-size: ${size[2]};}
 
     /* 제목 텍스트 */
-    #blog-message h2,
     #blog-info-page .block-title,
     #blog-categories-page #item-list-name h2,
     #blog-tags-page #item-list-name h2,
@@ -208,7 +222,6 @@ export default css`
     #blog-header .small-text,
     #blog-footer .small-text,
     #blog-menu a,
-    #blog-message p,
     #total-posts p,
     #blog-post-list .list-item .list-content .info-name,
     #blog-post-list .list-item .list-content .list-description,
@@ -255,7 +268,6 @@ export default css`
     #blog-footer a {font-size: ${size[3]};}
 
     /* 제목 텍스트 */
-    #blog-message h2,
     #blog-info-page .block-title,
     #blog-categories-page #item-list-name h2,
     #blog-tags-page #item-list-name h2,

@@ -14,7 +14,7 @@ const BlogPostTemplate = ({ data, pageContext, }) => {
     pageName: frontmatter.title,
     pageDescription: excerpt,
     pageKeywords: frontmatter.tag.join(', '),
-    pageUrl: `/${slug}`,
+    pageUrl: `/blog/${slug}`,
     pageType: 'article',
     pageImage: frontmatter.image ? frontmatter.image.publicURL : '',
   };

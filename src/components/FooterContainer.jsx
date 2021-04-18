@@ -8,8 +8,9 @@ const FooterContainer = () => {
     box-shadow: 0px 0px 10px -4px #333333;
     padding: 10px;
     text-align: center;
-    margin-top: 50px;
+    margin-top: 100px;
     box-sizing: border-box;
+    letter-spacing: -1px;
 
     & > #footer-copyright {
       margin-top: 5px;

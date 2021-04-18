@@ -3,7 +3,7 @@ import React from 'react';
 
 const siteData = {
   pageName: '에러 404',
-  pageUrl: '/404',
+  pageUrl: '/blog/404',
   pageType: 'website',
 };
 

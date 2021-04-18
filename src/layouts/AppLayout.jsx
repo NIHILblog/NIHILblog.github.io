@@ -27,8 +27,6 @@ const AppLayout = ({ children, pageName, pageDescription, pageKeywords, pageUrl,
     siteData.image = pageImage ? pageImage : siteImage;
   }
 
-  console.log(siteData.image);
-
   return (
     <>
       <Global styles={GlobalStyle} />
@@ -40,6 +38,17 @@ const AppLayout = ({ children, pageName, pageDescription, pageKeywords, pageUrl,
         <meta name='author' content={author} />
         <meta name='generator' content={generator} />
         <meta name='keywords' content={siteData.keywords} />
+
+        {/* 파비콘 */}
+        <link rel='shortcut icon' href='/blog/favicon.ico' type='image/x-icon' />
+        <link rel='icon' href='/blog/favicon.ico' type='image/x-icon' />
+
+        {/* 폰트 어썸 */}
+        <link
+          rel='stylesheet'
+          href='https://use.fontawesome.com/releases/v5.15.1/css/all.css' integrity='sha384-vp86vTRFVJgpjF9jiIGPEEqYqlDwgyBgEF109VFjmqGmIY/Y4HV4d3Gp2irVfcrp'
+          crossOrigin='anonymous'
+        />
 
         {/* 오픈그래프 */}
         <meta property='og:site_name' content={title} />

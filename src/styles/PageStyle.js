@@ -1,36 +1,6 @@
 import { css } from '@emotion/react';
 
 export default css`
-  /* 블로그 안내문 */
-  & > #blog-message {
-    background-color: #ffffff;
-    padding: 10px;
-    border-radius: 10px;
-    box-shadow: 0px 0px 10px -4px #333333;
-    margin-bottom: 50px;
-    transition: all 0.3s;
-
-    & > h2 {
-      background-color: #333333;
-      padding: 10px;
-      border-radius: 10px;
-      margin-bottom: 20px;
-      color: #ffffff;
-      font-weight: 500;
-      letter-spacing: -1px;
-      transition: all 0.3s;
-    }
-
-    & > p {
-      text-align: justify;
-      letter-spacing: -1px;
-      color: #333333;
-      font-weight: 500;
-      transition: all 0.3s;
-      text-indent: 10px;
-    }
-  }
-  
   /* 컨텐츠 블럭 */
   & > #blog-index-page #blog-post-list #total-posts,
   & > #blog-index-page #blog-post-list .list-item,
@@ -166,7 +136,7 @@ export default css`
     /* 포스트 목록으로 */
     & > #more-posts {
       text-align: center;
-      margin-top: 50px;
+      margin-top: 100px;
 
       & > a {
         background-color: #333333;

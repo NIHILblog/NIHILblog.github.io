@@ -1,15 +1,14 @@
 import React from 'react';
 import { css } from '@emotion/react';
 
-export const Strike = ({ children, }) => {
+export const Bold = ({ children, }) => {
   const style = css`
-    color: #888888;
-    transition: all 0.3s;
+    font-weight: 900;
   `;
 
   return (
     <>
-      <s css={style}>{children}</s>
+      <span css={style}>{children}</span>
     </>
   );
 };

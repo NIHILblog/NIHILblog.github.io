@@ -12,3 +12,7 @@ export * from './Ul';
 export * from './Ol';
 export * from './Pre';
 export * from './MainImage';
+export * from './Score';
+export * from './Gray';
+export * from './Quote';
+export * from './Bold';

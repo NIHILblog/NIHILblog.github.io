@@ -72,7 +72,7 @@ export const Pre = ({ children, top = 20, bottom = 20, }) => {
       border: 5px solid ${color[0]};
       box-sizing: border-box;
       border-radius: 10px;
-      padding: 40px 10px 10px 10px;
+      padding: 60px 10px 10px 10px;
 
       font-family: 'CascadiaCode', 'Noto Sans CJK KR', sans-serif;
       font-weight: 400;

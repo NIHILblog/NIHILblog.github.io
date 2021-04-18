@@ -13,7 +13,7 @@ const BlogPostsTemplate = ({ data, pageContext, }) => {
 
   const siteData = {
     pageName: `포스트 목록 (${currentPage} 페이지)`,
-    pageUrl: `/page/${currentPage}`,
+    pageUrl: `/blog/page/${currentPage}`,
     pageType: 'website',
   };
 

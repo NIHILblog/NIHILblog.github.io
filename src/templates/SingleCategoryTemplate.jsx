@@ -7,7 +7,7 @@ const SingleTagTemplate = ({ data, pageContext, }) => {
 
   const siteData = {
     pageName: `"${pageContext.category}" 관련 포스트 ${totalCount}건`,
-    pageUrl: `/categories/${pageContext.category}`,
+    pageUrl: `/blog/categories/${pageContext.category}`,
     pageType: 'website',
   };
 

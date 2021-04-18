@@ -4,7 +4,7 @@ import { graphql, Link } from 'gatsby';
 
 const siteData = {
   pageName: '홈',
-  pageUrl: '/',
+  pageUrl: '/blog/',
   pageType: 'website',
 };
 

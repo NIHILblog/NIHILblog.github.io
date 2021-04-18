@@ -13,7 +13,7 @@ const BlogNoticeListTemplate = ({ data, pageContext, }) => {
 
   const siteData = {
     pageName: `공지 목록 (${currentPage} 페이지)`,
-    pageUrl: `/notice/page/${currentPage}`,
+    pageUrl: `/blog/notice/page/${currentPage}`,
     pageType: 'website',
   };
 

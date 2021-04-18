@@ -7,9 +7,10 @@ const NavContainer = () => {
     width: 100%;
     box-sizing: border-box;
     text-align: center;
-    margin-bottom: 50px;
+    margin-bottom: 100px;
     background-color: #333333;
     padding: 10px;
+    letter-spacing: -1px;
     
     & > span {
       & > a {
