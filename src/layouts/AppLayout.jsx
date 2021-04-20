@@ -55,7 +55,7 @@ const AppLayout = ({ children, pageName, pageDescription, pageKeywords, pageUrl,
         <meta property='og:type' content={pageType} />
         <meta property='og:title' content={pageName} />
         <meta property='og:description' content={siteData.description} />
-        <meta property='og:image' content={`${url}${siteData.image}`} />
+        <meta property='og:image' content={siteData.image} />
         <meta property='og:locale' content='ko_KR' />
         <meta property='og:url' content={`${url}${pageUrl}`} />
 
@@ -65,7 +65,7 @@ const AppLayout = ({ children, pageName, pageDescription, pageKeywords, pageUrl,
         <meta name='twitter:title' content={`${pageName} - ${title}`} />
         <meta name='twitter:creator' content={`@${author}`} />
         <meta name='twitter:description' content={siteData.description} />
-        <meta name='twitter:image' content={`${url}${siteData.image}`} />
+        <meta name='twitter:image' content={siteData.image} />
 
         {/* 검색등록 */}
         <meta name='google-site-verification' content='iIK1QMzAYU9YHlIbkvglYdu5GF4WsxIBaV_geNrPVMI' />

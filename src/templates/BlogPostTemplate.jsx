@@ -19,7 +19,7 @@ const BlogPostTemplate = ({ data, pageContext, }) => {
     pageKeywords: frontmatter.tag.join(', '),
     pageUrl: `/blog/${slug}`,
     pageType: 'article',
-    pageImage: frontmatter.image ? frontmatter.image.publicURL : '',
+    pageImage: frontmatter.coverImage ? frontmatter.coverImage : '',
   };
 
   const disqusConfig = {
@@ -45,8 +45,8 @@ const BlogPostTemplate = ({ data, pageContext, }) => {
           <div id='post-metadata'>
             <h2 id='content-title'><i className='fas fa-comment-alt' /> {frontmatter.title}</h2>
             {
-              frontmatter.image
-                ? <MainImage src={frontmatter.image.publicURL} alt={frontmatter.title} />
+              frontmatter.coverImage
+                ? <MainImage src={frontmatter.coverImage} alt={frontmatter.title} />
                 : ''
             }
             <div className='content-data'>
@@ -108,9 +108,7 @@ export const query = graphql`
         title
         updatedAt
         updateString: updatedAt(formatString: "YYYY년 MM월 DD일 HH시 mm분")
-        image {
-          publicURL
-        }
+        coverImage
       }
       slug
       body

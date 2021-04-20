@@ -19,7 +19,7 @@ const BlogNoticeTemplate = ({ data, pageContext, }) => {
     pageKeywords: frontmatter.tag.join(', '),
     pageUrl: `/blog/notice/${slug}`,
     pageType: 'article',
-    pageImage: frontmatter.image ? frontmatter.image.publicURL : '',
+    pageImage: frontmatter.coverImage ? frontmatter.coverImage : '',
   };
 
   const disqusConfig = {
@@ -46,7 +46,7 @@ const BlogNoticeTemplate = ({ data, pageContext, }) => {
             <h2 id='content-title'><i className='fas fa-bell' /> {frontmatter.title}</h2>
             {
               frontmatter.image
-                ? <MainImage src={frontmatter.image.publicURL} alt={frontmatter.title} />
+                ? <MainImage src={frontmatter.coverImage} alt={frontmatter.title} />
                 : ''
             }
             <div className='content-data'>
@@ -88,9 +88,7 @@ export const query = graphql`
         title
         updatedAt
         updateString: updatedAt(formatString: "YYYY년 MM월 DD일 HH시 mm분")
-        image {
-          publicURL
-        }
+        coverImage
       }
       slug
       body

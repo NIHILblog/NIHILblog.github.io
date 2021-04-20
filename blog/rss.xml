@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[RSS - 니힐 블로그]]></title><description><![CDATA[블로그를 운영할 필요를 느꼈으나 네이버나 티스토리에 질려서 직접 GatsbyJS로 개발한 블로그이고, HTML, CSS, JavaScript 기술을 이용한 웹 개발 위주의 프로그래밍과 일본어 학습자료, 그리고 게임 관련된 컨텐츠를 다루는 블로그입니다.]]></description><link>http://github.com/dylang/node-rss</link><generator>GatsbyJS</generator><lastBuildDate>Tue, 20 Apr 2021 05:41:05 GMT</lastBuildDate><item><title><![CDATA[이번에는 공지 테스트를 해보도록 하자]]></title><description><![CDATA[공지 내용은 없습니다! 아니 그럼 왜 공지를 적은거야! 이 포스트는 일반적인 목록에서는 보이지 않습니다.]]></description><link>https://nihilblog.github.ionotice/2021/2021-04-15-02-notice-test-post/</link><guid isPermaLink="false">https://nihilblog.github.ionotice/2021/2021-04-15-02-notice-test-post/</guid><pubDate>Thu, 15 Apr 2021 06:14:00 GMT</pubDate><content:encoded>function _extends() { _extends = Object.assign || function (target) { for (var i = 1; i &lt; arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; }; return _extends.apply(this, arguments); }
+<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[RSS - 니힐 블로그]]></title><description><![CDATA[블로그를 운영할 필요를 느꼈으나 네이버나 티스토리에 질려서 직접 GatsbyJS로 개발한 블로그이고, HTML, CSS, JavaScript 기술을 이용한 웹 개발 위주의 프로그래밍과 일본어 학습자료, 그리고 게임 관련된 컨텐츠를 다루는 블로그입니다.]]></description><link>http://github.com/dylang/node-rss</link><generator>GatsbyJS</generator><lastBuildDate>Tue, 20 Apr 2021 06:07:23 GMT</lastBuildDate><item><title><![CDATA[이번에는 공지 테스트를 해보도록 하자]]></title><description><![CDATA[공지 내용은 없습니다! 아니 그럼 왜 공지를 적은거야! 이 포스트는 일반적인 목록에서는 보이지 않습니다.]]></description><link>https://nihilblog.github.ionotice/2021/2021-04-15-02-notice-test-post/</link><guid isPermaLink="false">https://nihilblog.github.ionotice/2021/2021-04-15-02-notice-test-post/</guid><pubDate>Thu, 15 Apr 2021 06:14:00 GMT</pubDate><content:encoded>function _extends() { _extends = Object.assign || function (target) { for (var i = 1; i &lt; arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; }; return _extends.apply(this, arguments); }
 
 function _objectWithoutProperties(source, excluded) { if (source == null) return {}; var target = _objectWithoutPropertiesLoose(source, excluded); var key, i; if (Object.getOwnPropertySymbols) { var sourceSymbolKeys = Object.getOwnPropertySymbols(source); for (i = 0; i &lt; sourceSymbolKeys.length; i++) { key = sourceSymbolKeys[i]; if (excluded.indexOf(key) &gt;= 0) continue; if (!Object.prototype.propertyIsEnumerable.call(source, key)) continue; target[key] = source[key]; } } return target; }
 
@@ -9,7 +9,7 @@ function _objectWithoutPropertiesLoose(source, excluded) { if (source == null) r
 /* @jsx mdx */
 var _frontmatter = {
   &quot;title&quot;: &quot;이번에는 공지 테스트를 해보도록 하자&quot;,
-  &quot;image&quot;: null,
+  &quot;coverImage&quot;: null,
   &quot;category&quot;: [],
   &quot;tag&quot;: [],
   &quot;createdAt&quot;: &quot;2021-04-15T06:14:00.000Z&quot;,
@@ -42,7 +42,7 @@ function _objectWithoutPropertiesLoose(source, excluded) { if (source == null) r
 /* @jsx mdx */
 var _frontmatter = {
   &quot;title&quot;: &quot;이번에는 어떤 제목을 적을까. 아 신이시여.&quot;,
-  &quot;image&quot;: &quot;main-image.png&quot;,
+  &quot;coverImage&quot;: &quot;https://i.postimg.cc/GtBCpsZZ/test.png&quot;,
   &quot;category&quot;: [&quot;끝나라&quot;],
   &quot;tag&quot;: [&quot;살려줘&quot;, &quot;테스트&quot;, &quot;너무&quot;, &quot;힘들어&quot;, &quot;자라나라 머리머리&quot;],
   &quot;createdAt&quot;: &quot;2021-04-15T00:20:00.000Z&quot;,
@@ -326,7 +326,7 @@ function _objectWithoutPropertiesLoose(source, excluded) { if (source == null) r
 /* @jsx mdx */
 var _frontmatter = {
   &quot;title&quot;: &quot;제목을 적는다아아아아아아아아아아아&quot;,
-  &quot;image&quot;: null,
+  &quot;coverImage&quot;: null,
   &quot;category&quot;: [&quot;카테고리&quot;],
   &quot;tag&quot;: [&quot;태그&quot;],
   &quot;createdAt&quot;: &quot;2021-04-13T14:19:00.000Z&quot;,
@@ -359,7 +359,7 @@ function _objectWithoutPropertiesLoose(source, excluded) { if (source == null) r
 /* @jsx mdx */
 var _frontmatter = {
   &quot;title&quot;: &quot;여기에서 무엇을 하고 있는가&quot;,
-  &quot;image&quot;: null,
+  &quot;coverImage&quot;: null,
   &quot;category&quot;: [&quot;여기는&quot;, &quot;어디&quot;],
   &quot;tag&quot;: [&quot;누구냐&quot;, &quot;정체를 밝혀라&quot;],
   &quot;createdAt&quot;: &quot;2021-04-13T10:28:00.000Z&quot;,
@@ -392,7 +392,7 @@ function _objectWithoutPropertiesLoose(source, excluded) { if (source == null) r
 /* @jsx mdx */
 var _frontmatter = {
   &quot;title&quot;: &quot;Emmet이란 무엇인가! 그것을 알아보자!&quot;,
-  &quot;image&quot;: null,
+  &quot;coverImage&quot;: null,
   &quot;category&quot;: [&quot;JAVASCRIPT&quot;, &quot;vscode&quot;],
   &quot;tag&quot;: [&quot;코딩&quot;, &quot;프로그래밍&quot;, &quot;Emmet&quot;, &quot;젠코딩&quot;, &quot;웹개발&quot;, &quot;웹 프로그래밍&quot;],
   &quot;createdAt&quot;: &quot;2021-04-11T18:00:00.000Z&quot;,
@@ -434,7 +434,7 @@ function _objectWithoutPropertiesLoose(source, excluded) { if (source == null) r
 var name = &apos;니힐&apos;;
 var _frontmatter = {
   &quot;title&quot;: &quot;아 너무 귀찮다고 미칠 것 같다고&quot;,
-  &quot;image&quot;: null,
+  &quot;coverImage&quot;: null,
   &quot;category&quot;: [&quot;test2&quot;, &quot;test4&quot;],
   &quot;tag&quot;: [&quot;tag4&quot;, &quot;tag1&quot;, &quot;tag2&quot;, &quot;귀찮음&quot;, &quot;귀찮아&quot;, &quot;정말 귀찮아&quot;],
   &quot;createdAt&quot;: &quot;2021-04-11T00:16:00.000Z&quot;,
@@ -473,7 +473,7 @@ function _objectWithoutPropertiesLoose(source, excluded) { if (source == null) r
 /* @jsx mdx */
 var _frontmatter = {
   &quot;title&quot;: &quot;두번째 포스트&quot;,
-  &quot;image&quot;: null,
+  &quot;coverImage&quot;: null,
   &quot;category&quot;: [&quot;test2&quot;, &quot;test3&quot;],
   &quot;tag&quot;: [&quot;tag1&quot;, &quot;tag3&quot;, &quot;new&quot;, &quot;post&quot;, &quot;posts&quot;, &quot;blog&quot;],
   &quot;createdAt&quot;: &quot;2021-04-11T00:15:00.000Z&quot;,
@@ -506,7 +506,7 @@ function _objectWithoutPropertiesLoose(source, excluded) { if (source == null) r
 /* @jsx mdx */
 var _frontmatter = {
   &quot;title&quot;: &quot;첫번째 포스트이다&quot;,
-  &quot;image&quot;: null,
+  &quot;coverImage&quot;: null,
   &quot;category&quot;: [&quot;test1&quot;, &quot;test2&quot;],
   &quot;tag&quot;: [&quot;tag1&quot;, &quot;tag2&quot;, &quot;new&quot;, &quot;post&quot;],
   &quot;createdAt&quot;: &quot;2021-04-11T00:14:00.000Z&quot;,
