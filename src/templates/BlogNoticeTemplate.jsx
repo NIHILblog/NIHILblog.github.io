@@ -58,6 +58,7 @@ const BlogNoticeTemplate = ({ data, pageContext, }) => {
               <time dateTime={frontmatter.updatedAt}>{frontmatter.updateString}</time>
             </div>
           </div>
+          <hr />
           <div id='post-content'>
             <MDXRenderer>
               {body}
