@@ -1,5 +1,6 @@
 import React from 'react';
-import { css } from '@emotion/react';
+import { css, Global } from '@emotion/react';
+import size from '@data/size';
 
 export const Image = ({ src, alt, top = 40, bottom = 40, }) => {
   const style = css`
@@ -48,12 +49,15 @@ export const Image = ({ src, alt, top = 40, bottom = 40, }) => {
 
     & > figcaption {
       margin-top: 10px;
-      font-size: 11pt;
       text-align: center;
       font-style: italic;
       color: #aaaaaa;
       letter-spacing: -1px;
       transition: all 0.3s;
+
+      & > span {
+        font-size: 90%;
+      }
 
       &:before {
         content: '\\f03e';
@@ -64,12 +68,29 @@ export const Image = ({ src, alt, top = 40, bottom = 40, }) => {
     }
   `;
 
+  const fontSize = css`
+    @media (min-width: 1px) and (max-width: 600px) {
+      .post-image-block figcaption {font-size: ${size[1]};}
+    }
+
+    @media (min-width: 601px) and (max-width: 800px) {
+      .post-image-block figcaption {font-size: ${size[2]};}
+    }
+
+    @media (min-width: 801px) {
+      .post-image-block figcaption {font-size: ${size[3]};}
+    }
+  `;
+
   return (
     <>
+      <Global styles={fontSize} />
       <figure className='post-image-block' css={style}>
         <img src={src} alt={alt} />
         <a href={src} target='_blank' rel='noreferrer noopener'>크게 보기 (새 창)</a>
-        <figcaption>{alt}</figcaption>
+        <figcaption>
+          <span>{alt}</span>
+        </figcaption>
       </figure>
     </>
   );

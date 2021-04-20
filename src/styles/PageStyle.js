@@ -394,7 +394,7 @@ export default css`
             background-color: #555555;
             border-radius: 10px;
             padding: 0px 10px;
-            margin-right: 5px;
+            margin-right: 10px;
             transition: all 0.3s;
 
             &:before {
@@ -422,7 +422,7 @@ export default css`
             background-color: #55555550;
             border-radius: 10px;
             padding: 0px 10px;
-            margin-left: 5px;
+            margin-right: 10px;
             transition: all 0.3s;
 
             &:before {
@@ -464,7 +464,7 @@ export default css`
             background-color: #555555;
             border-radius: 10px;
             padding: 0px 10px;
-            margin-left: 5px;
+            margin-left: 10px;
             transition: all 0.3s;
 
             &:after {
@@ -492,7 +492,7 @@ export default css`
             background-color: #55555550;
             border-radius: 10px;
             padding: 0px 10px;
-            margin-left: 5px;
+            margin-left: 10px;
             transition: all 0.3s;
 
             &:after {

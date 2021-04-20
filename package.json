@@ -1,6 +1,6 @@
 {
   "name": "nihil-blog",
-  "version": "1.6.0",
+  "version": "1.7.0",
   "description": "니힐 블로그 프로젝트",
   "main": "index.js",
   "repository": {
@@ -24,6 +24,7 @@
     "@emotion/styled": "^11.3.0",
     "@mdx-js/mdx": "^1.6.22",
     "@mdx-js/react": "^1.6.22",
+    "dotenv": "^8.2.0",
     "gatsby": "^3.3.0",
     "gatsby-plugin-disqus": "^1.2.2",
     "gatsby-plugin-emotion": "^6.3.0",

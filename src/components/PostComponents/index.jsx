@@ -21,3 +21,6 @@ export * from './Youtube';
 export * from './Spoiler';
 export * from './Dl';
 export * from './Kbd';
+export * from './Char';
+export * from './NoteTop';
+export * from './NoteBottom';

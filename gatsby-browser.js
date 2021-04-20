@@ -3,7 +3,7 @@ import { MDXProvider } from '@mdx-js/react';
 import {
   H, P, Image, A, Strike, Strong, Q, Code, Message, Em,
   Ol, Ul, Pre, Score, Gray, Quote, Bold, Details, Youtube, Spoiler,
-  Dl, Kbd
+  Dl, Kbd, Char, NoteTop, NoteBottom
 } from '@components/PostComponents';
 
 import 'prismjs/themes/prism-tomorrow.css';
@@ -37,6 +37,9 @@ const components = {
   Spoiler,
   Dl,
   Kbd,
+  Char,
+  NoteTop,
+  NoteBottom,
 };
 
 export const wrapRootElement = ({ element, }) => { return (

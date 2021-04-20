@@ -9,7 +9,10 @@ display: true
 notice: false
 ---
 
-import { A, Message, Q, P, H, Score, Bold, Quote, Details, Gray, Youtube, Spoiler, Dl, Kbd } from '@components/PostComponents'
+import { 
+  A, Message, Q, P, H, Score, Bold, Quote, Details, Gray,
+  Youtube, Spoiler, Dl, Kbd, Char, NoteTop, NoteBottom
+} from '@components/PostComponents'
 
 # 제목을 적어본다. h2 태그로 변환된다.
 
@@ -36,6 +39,16 @@ import { A, Message, Q, P, H, Score, Bold, Quote, Details, Gray, Youtube, Spoile
 </Quote>
 
 이것은 <Q>인용 태그이다. 인라인 인용이다.</Q>
+
+<Char who='장만월(호텔 델루나)' file='장만월(부드러운)'>
+  그러게, <Bold>슬프게.</Bold> 난 좀.. 슬퍼졌어. 아까 보던 바다보다, 지금 보는 바다가 더.. <Bold>예뻐져서.</Bold>
+</Char>
+
+위의 것은 인용을 조금 응용해서 아이콘을 넣은 버전이다.
+
+각주도 만들었다. 각주는 이렇게 사용한다.<NoteTop number='1' link='1'>1</NoteTop> 클릭하면 아래로 이동한다.
+
+아래의 세가지는 목록이다.
 
 * 이것은
 * 목록이다
@@ -80,6 +93,10 @@ import { A, Message, Q, P, H, Score, Bold, Quote, Details, Gray, Youtube, Spoile
 
 키보드 입력 요소도 구현해야한다. 기본적으로 내가 쓰던 블로그의 디자인을 이용해야겠다. 만들었다. <Kbd>CTRL + C</Kbd> 이런식으로 사용한다.
 
+용어 설명 컴포넌트는 위에 있다.
+
+리뷰할 때 사용할 컴포넌트들도 있어야겠다. 인용 태그들은 위에 있고, 리뷰 점수는 아래에 있다.
+
 ```text
 이것은 pre 태그와 같다. 스타일 조정이 약간 필요하다. 글꼴은 조정을 해야한다.
 ```
@@ -122,8 +139,6 @@ console.log('Hello World!!');
 
 이미지는 이미 만들었지만, 두개 그리고 세개의 이미지를 한 번에 그루핑하는 컴포넌트도 만들어야겠다.
 
-용어 설명 컴포넌트도 있어야 하고 리뷰할 때 사용할 컴포넌트들도 있어야겠다. 준비할 게 많은 것 같다.
-
 ![테스트를 하기 위해서 가지고 온 아이유 이미지다](https://img4.yna.co.kr/photo/cms/2019/05/02/02/PCM20190502000402370_P2.jpg)
 
 <Score score='0.5'>리뷰 점수</Score>
@@ -144,3 +159,12 @@ console.log('Hello World!!');
 <Youtube src='https://www.youtube.com/watch?v=fkiTi7Fnfls'>
   아이유 - 라일락 무대 영상
 </Youtube>
+
+<Youtube src='https://www.youtube.com/watch?v=bwLNlAIDZfg'>
+  아이유 - 코인 무대 영상
+</Youtube>
+
+<NoteBottom number='1' link='1' top='40' first>각주 4형제 맏형.</NoteBottom>
+<NoteBottom number='2' link='2'>각주 4형제 둘째.</NoteBottom>
+<NoteBottom number='3' link='3'>각주 4형제 사실상 실세.</NoteBottom>
+<NoteBottom number='4' link='4' bottom='40'>각주 4형제 막내. 찐따.</NoteBottom>

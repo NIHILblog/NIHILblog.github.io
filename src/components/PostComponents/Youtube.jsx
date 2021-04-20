@@ -52,6 +52,10 @@ export const Youtube = ({ children, src, top = 40, bottom = 40, }) => {
     font-style: italic;
     margin: 5px 0px ${bottom}px 0px;
 
+    & > span {
+      font-size: 90%;
+    }
+
     &:before {
       content: '\\f167';
       margin-right: 5px;
@@ -63,16 +67,19 @@ export const Youtube = ({ children, src, top = 40, bottom = 40, }) => {
   const fontSize = css`
     @media (min-width: 1px) and (max-width: 600px) {
       .youtube-block-desc,
+      .post-youtube-block-desc,
       .post-youtube-block p {font-size: ${size[1]};}
     }
 
     @media (min-width: 601px) and (max-width: 800px) {
       .youtube-block-desc,
+      .post-youtube-block-desc,
       .post-youtube-block p {font-size: ${size[2]};}
     }
 
     @media (min-width: 801px) {
       .youtube-block-desc,
+      .post-youtube-block-desc,
       .post-youtube-block p {font-size: ${size[3]};}
     }
   `;
@@ -85,7 +92,9 @@ export const Youtube = ({ children, src, top = 40, bottom = 40, }) => {
           <iframe id='video' src={replaceSrc} frameBorder='0' allow='encrypted-media; gyroscope; picture-in-picture' allowFullScreen></iframe>
         </div>
       </div>
-      <p className='post-youtube-block-desc' css={youtubeDesc}>{children}</p>
+      <p className='post-youtube-block-desc' css={youtubeDesc}>
+        <span>{children}</span>
+      </p>
     </>
   );
 };
