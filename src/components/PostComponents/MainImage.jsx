@@ -13,10 +13,16 @@ export const MainImage = ({ src, alt, }) => {
     }
   `;
 
+  console.log(src);
+
   return (
     <>
       <div id='content-main-image' css={style}>
-        <img src={src} alt={alt} />
+        {
+          process.env.NODE_ENV === 'development'
+            ? <img src={`${src}`} alt={alt} />
+            : <img src={`/blog${src}`} alt={alt} />
+        }
       </div>
     </>
   );
