@@ -52,6 +52,8 @@ export const Image = ({ src, alt, top = 40, bottom = 40, }) => {
       text-align: center;
       font-style: italic;
       color: #aaaaaa;
+      letter-spacing: -1px;
+      transition: all 0.3s;
 
       &:before {
         content: '\\f03e';

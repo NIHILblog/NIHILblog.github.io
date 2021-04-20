@@ -5,10 +5,13 @@ import AppLayout from '@layouts/AppLayout';
 import { Helmet } from 'react-helmet';
 import PostNavigation from '@components/PostNavigation';
 import { Message, MainImage } from '@components/PostComponents';
+import { Disqus } from 'gatsby-plugin-disqus';
+import { useSiteMetaDataQuery } from '@hooks/useSiteMetaDataQuery';
 
 const BlogPostTemplate = ({ data, pageContext, }) => {
   const { frontmatter, body, slug, excerpt, } = data.mdx;
   const { prev, next, } = pageContext;
+  const { url, } = useSiteMetaDataQuery();
 
   const siteData = {
     pageName: frontmatter.title,
@@ -17,6 +20,12 @@ const BlogPostTemplate = ({ data, pageContext, }) => {
     pageUrl: `/blog/${slug}`,
     pageType: 'article',
     pageImage: frontmatter.image ? frontmatter.image.publicURL : '',
+  };
+
+  const disqusConfig = {
+    url: `${url}/blog/${slug}`,
+    identifier: slug,
+    title: frontmatter.title,
   };
   
   return (
@@ -77,6 +86,9 @@ const BlogPostTemplate = ({ data, pageContext, }) => {
             <Message color='blue' bottom='0'>
               포스트를 읽고 궁금한 점이나 이해가 안가는 점, 그리고 문의 사항이 있을 경우엔 블로그 하단의 연락책을 이용하거나 아래에 덧글을 입력해주시면 빠르게 확인하고 답변 드리겠습니다. 이 포스트를 보신 모든 분들의 하루가 좋은 하루이길 바랍니다.
             </Message>
+            <div id='content-comment'>
+              <Disqus config={disqusConfig} />
+            </div>
           </div>
         </article>
         <PostNavigation prev={prev} next={next} />

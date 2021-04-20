@@ -82,6 +82,7 @@ export const Score = ({ top = 40, bottom = 40, children, score, }) => {
       color: #ffffff;
       transition: all 0.3s;
       margin-bottom: 5px;
+      letter-spacing: -1px;
     }
 
     & > p {
@@ -130,7 +131,7 @@ export const Score = ({ top = 40, bottom = 40, children, score, }) => {
     <>
       <Global styles={fontSize} />
       <div className='post-review-score' css={style}>
-        <h2>{children}: {score}</h2>
+        <h2>{children}: {score}점</h2>
         <p></p>
       </div>
     </>

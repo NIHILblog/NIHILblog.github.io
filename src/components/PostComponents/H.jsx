@@ -35,6 +35,7 @@ export const H = ({ children, top = 40, bottom = 40, type = '1', }) => {
     border-radius: 10px;
     margin: ${top}px 0px ${bottom}px 0px;
     transition: all 0.3s;
+    letter-spacing: -1px;
 
     & > span {
       font-size: ${typePadding.spanSize}%;
@@ -48,11 +49,38 @@ export const H = ({ children, top = 40, bottom = 40, type = '1', }) => {
     }
   `;
 
-  return (
-    <>
-      <h2 className='post-heading-2' css={style}>
-        <span>{children}</span>
-      </h2>
-    </>
-  );
+  switch (type) {
+    case '1':
+      return (
+        <>
+          <h2 className='post-heading-2' css={style}>
+            <span>{children}</span>
+          </h2>
+        </>
+      );
+    case '2':
+      return (
+        <>
+          <h3 className='post-heading-3' css={style}>
+            <span>{children}</span>
+          </h3>
+        </>
+      );
+    case '3':
+      return (
+        <>
+          <h4 className='post-heading-4' css={style}>
+            <span>{children}</span>
+          </h4>
+        </>
+      );
+    case '4':
+      return (
+        <>
+          <h5 className='post-heading-5' css={style}>
+            <span>{children}</span>
+          </h5>
+        </>
+      );
+  }
 };

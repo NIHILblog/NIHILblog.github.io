@@ -1,7 +1,7 @@
 import React from 'react';
 import { css } from '@emotion/react';
 
-export const Message = ({ children, color, top = 20, bottom = 20, }) => {
+export const Message = ({ children, color, top = 40, bottom = 40, }) => {
   const colorType = {};
 
   if (color === 'red') {

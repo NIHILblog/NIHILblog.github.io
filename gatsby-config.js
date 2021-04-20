@@ -1,6 +1,9 @@
 const unwrapImages = require('remark-unwrap-images');
 
 module.exports = {
+  flags: {
+    DEV_SSR: false,
+  },
   pathPrefix: `/blog`,
   siteMetadata: {
     title: '니힐 블로그',
@@ -18,9 +21,9 @@ module.exports = {
     'gatsby-transformer-sharp',
     'gatsby-plugin-sass',
     {
-      resolve: 'gatsby-plugin-output',
+      resolve: 'gatsby-plugin-disqus',
       options: {
-        publicPath: 'blog',
+        shortname: 'nihil-beulrogeu',
       },
     },
     {

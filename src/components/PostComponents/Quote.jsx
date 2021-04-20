@@ -2,7 +2,7 @@ import React from 'react';
 import { css, Global } from '@emotion/react';
 import size from '@data/size';
 
-export const Quote = ({ top = 20, bottom = 20, who, children, }) => {
+export const Quote = ({ top = 40, bottom = 40, who, children, }) => {
   const style = css`
     margin: ${top}px 0px ${bottom}px 0px;
     padding: 10px;
@@ -10,6 +10,7 @@ export const Quote = ({ top = 20, bottom = 20, who, children, }) => {
     transition: all 0.3s;
     border-radius: 10px;
     background-color: #eeeeee;
+    letter-spacing: -1px;
 
     & > blockquote {
       margin-bottom: 10px;
@@ -37,6 +38,8 @@ export const Quote = ({ top = 20, bottom = 20, who, children, }) => {
       text-align: right;
       transition: all 0.3s;
       font-weight: 500;
+      color: #333333;
+      letter-spacing: -1px;
 
       &:before {
         content: '\\f007';

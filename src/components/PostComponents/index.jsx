@@ -17,3 +17,7 @@ export * from './Gray';
 export * from './Quote';
 export * from './Bold';
 export * from './Details';
+export * from './Youtube';
+export * from './Spoiler';
+export * from './Dl';
+export * from './Kbd';

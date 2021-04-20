@@ -250,6 +250,7 @@ export default css`
         color: #555555;
         margin: 3px;
         transition: all 0.3s;
+        letter-spacing: -1px;
 
         &:hover {
           background-color: #333333;
@@ -344,6 +345,20 @@ export default css`
       border-bottom: 3px dotted #888888;
       margin: 60px 0px;
     }
+
+    & > #post-content {
+      & > #content-comment {
+        padding: 10px;
+        margin-top: 40px;
+        border-radius: 10px;
+        background-color: #333333;
+        color: #ffffff;
+
+        & a {
+          color: #ffffff;
+        }
+      }
+    }
   }
 
   & > #post-navigation {
@@ -360,6 +375,7 @@ export default css`
           border-radius: 10px;
           text-align: left;
           transition: all 0.3s;
+          letter-spacing: -1px;
 
           &:hover {
             color: #ffffff;
@@ -399,6 +415,7 @@ export default css`
           border-radius: 10px;
           text-align: left;
           transition: all 0.3s;
+          letter-spacing: -1px;
 
           & > span {
             color: #ffffffb0;
@@ -428,6 +445,7 @@ export default css`
           border-radius: 10px;
           text-align: right;
           transition: all 0.3s;
+          letter-spacing: -1px;
 
           &:hover {
             color: #ffffff;
@@ -467,6 +485,7 @@ export default css`
           border-radius: 10px;
           text-align: right;
           transition: all 0.3s;
+          letter-spacing: -1px;
 
           & > span {
             color: #ffffffb0;

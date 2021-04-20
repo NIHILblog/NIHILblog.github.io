@@ -5,7 +5,7 @@ export const Code = ({ children, }) => {
   const style = css`
     padding: 0px 5px;
     border-radius: 5px;
-    font-weight: 600;
+    font-weight: 900;
     text-indent: 0px;
     border: 2px solid #888888;
     color: #ffffff;

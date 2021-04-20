@@ -1,7 +1,7 @@
 import React from 'react';
 import { css } from '@emotion/react';
 
-export const Ul = ({ children, top = 20, bottom = 20, }) => {
+export const Ul = ({ children, top = 40, bottom = 40, }) => {
   const style = css`
     margin: ${top}px 0px ${bottom}px 0px;
     padding: 7px 10px 7px 10px;

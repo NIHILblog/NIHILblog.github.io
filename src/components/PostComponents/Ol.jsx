@@ -1,7 +1,7 @@
 import React from 'react';
 import { css } from '@emotion/react';
 
-export const Ol = ({ children, top = 20, bottom = 20, }) => {
+export const Ol = ({ children, top = 40, bottom = 40, }) => {
   const style = css`
     margin: ${top}px 0px ${bottom}px 0px;
     transition: all 0.3s;

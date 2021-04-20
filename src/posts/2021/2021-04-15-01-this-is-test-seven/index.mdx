@@ -3,13 +3,13 @@ title: 이번에는 어떤 제목을 적을까. 아 신이시여.
 image: main-image.png
 category: [끝나라]
 tag: [살려줘, 테스트, 너무, 힘들어, 자라나라 머리머리]
-createdAt: 2021-04-15 00:20:00+09:00
-updatedAt: 2021-04-15 00:20:00+09:00
+createdAt: 2021-04-15 00:20:00
+updatedAt: 2021-04-15 00:20:00
 display: true
 notice: false
 ---
 
-import { A, Message, Q, P, H, Score, Bold, Quote, Details, Gray } from '@components/PostComponents'
+import { A, Message, Q, P, H, Score, Bold, Quote, Details, Gray, Youtube, Spoiler, Dl, Kbd } from '@components/PostComponents'
 
 # 제목을 적어본다. h2 태그로 변환된다.
 
@@ -28,6 +28,12 @@ import { A, Message, Q, P, H, Score, Bold, Quote, Details, Gray } from '@compone
 > 이것은 인용문이다. 블럭 인용문이다. 스타일 조정이 필요한데,
 >
 > 솔직히 컴포넌트를 사용할 것 같다.
+
+그래서 만든 게 아래의 태그이다.
+
+<Quote who='장만월(호텔 델루나)'>
+  그러게, <Bold>슬프게.</Bold> 난 좀.. 슬퍼졌어. 아까 보던 바다보다, 지금 보는 바다가 더.. <Bold>예뻐져서.</Bold>
+</Quote>
 
 이것은 <Q>인용 태그이다. 인라인 인용이다.</Q>
 
@@ -53,6 +59,13 @@ import { A, Message, Q, P, H, Score, Bold, Quote, Details, Gray } from '@compone
         1. 내부 내부 순차 목록
         * 여기도 넣어본다
 
+<Dl>
+  <dt>호텔 델루나</dt>
+  <dd>엘리트 호텔리어가 운명적인 사건으로 호텔 델루나의 지배인을 맡게 되면서 달처럼 고고하고 아름답지만 괴팍한 사장과 함께 델루나를 운영하며 생기는 특별한 이야기를 그린 작품이다.</dd>
+  <dt>나의 아저씨</dt>
+  <dd>삶의 무게를 버티며 살아가는 아저씨 삼 형제와 거칠게 살아온 한 여성이 서로를 통해 삶을 치유하는 과정을 그렸다.</dd>
+</Dl>
+
 이것은 *기울기*이다.
 
 이것은 **굵게 만드는 것**이다. 하지만 이는 중요하다는 의미를 가진 쪽이고, 단순히 굵게 만드는 건 <Bold>붉은 색이 아니다.</Bold>
@@ -62,6 +75,10 @@ import { A, Message, Q, P, H, Score, Bold, Quote, Details, Gray } from '@compone
 이것은 `간단한 코드`를 입력할 때에 쓴다.
 
 이것은 ~~취소선~~이다. 글씨가 약간 흐릿해진다. 이것은 <u>밑줄</u>이다 밑줄은 그냥 태그를 쓰면 될 것 같다. <Gray>이건 회색으로 만들어준다.</Gray>
+
+이것은 ||보일까||? 보인다. 디코에 있는 스포일러 기능은 없는 것 같다. 그래서 <Spoiler>스포일러 기능을</Spoiler> 만들었다. 클릭을 하기 전에는 안내문이 뜬다. 다시 클릭하면 스포일러 상태가 된다.
+
+키보드 입력 요소도 구현해야한다. 기본적으로 내가 쓰던 블로그의 디자인을 이용해야겠다. 만들었다. <Kbd>CTRL + C</Kbd> 이런식으로 사용한다.
 
 ```text
 이것은 pre 태그와 같다. 스타일 조정이 약간 필요하다. 글꼴은 조정을 해야한다.
@@ -105,10 +122,6 @@ console.log('Hello World!!');
 
 이미지는 이미 만들었지만, 두개 그리고 세개의 이미지를 한 번에 그루핑하는 컴포넌트도 만들어야겠다.
 
-이것은 ||보일까||? 보인다. 스포일러 기능은 없는 것 같다.
-
-키보드 입력 요소도 구현해야한다. 기본적으로 내가 쓰던 블로그의 디자인을 이용해야겠다.
-
 용어 설명 컴포넌트도 있어야 하고 리뷰할 때 사용할 컴포넌트들도 있어야겠다. 준비할 게 많은 것 같다.
 
 ![테스트를 하기 위해서 가지고 온 아이유 이미지다](https://img4.yna.co.kr/photo/cms/2019/05/02/02/PCM20190502000402370_P2.jpg)
@@ -124,10 +137,10 @@ console.log('Hello World!!');
 <Score score='4.5'>리뷰 점수</Score>
 <Score score='5'>리뷰 점수</Score>
 
-<Quote who='장만월(호텔 델루나)'>
-  그러게, <Bold>슬프게.</Bold> 난 좀.. 슬퍼졌어. 아까 보던 바다보다, 지금 보는 바다가 더.. <Bold>예뻐져서.</Bold>
-</Quote>
-
 <Details>
   클릭하면 이 문구가 나타나요. <A href='/2021/2021-04-13-02-the-sixth-post' type='blog'>여섯번째 포스트</A>
 </Details>
+
+<Youtube src='https://www.youtube.com/watch?v=fkiTi7Fnfls'>
+  아이유 - 라일락 무대 영상
+</Youtube>

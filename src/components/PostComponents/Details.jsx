@@ -2,7 +2,7 @@ import React, { useCallback, useState } from 'react';
 import { css, Global } from '@emotion/react';
 import size from '@data/size';
 
-export const Details = ({ children, close = '펼치기', open = '접기', top = 20, bottom = 20, }) => {
+export const Details = ({ children, close = '펼치기', open = '접기', top = 40, bottom = 40, }) => {
   const [ isOpen, setIsOpen, ] = useState(false);
   const [ title, setTitle, ] = useState(close);
 

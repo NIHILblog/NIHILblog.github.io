@@ -3,7 +3,7 @@ import { copyToClipboard } from '@utils/copy-to-clipboard';
 import { css } from '@emotion/react';
 import styled from '@emotion/styled';
 
-export const Pre = ({ children, top = 20, bottom = 20, }) => {
+export const Pre = ({ children, top = 40, bottom = 40, }) => {
   const [ word, setWord, ] = useState('복사');
 
   const codeLang = children.props.className;
