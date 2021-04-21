@@ -84,6 +84,7 @@ module.exports = {
         exclude: [
           '/dev-404-page',
           '/404',
+          '/view',
         ],
         query: `
           {

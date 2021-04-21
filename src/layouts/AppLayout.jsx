@@ -70,7 +70,6 @@ const AppLayout = ({ children, pageName, pageDescription, pageKeywords, pageUrl,
         {/* 검색등록 */}
         <meta name='google-site-verification' content='iIK1QMzAYU9YHlIbkvglYdu5GF4WsxIBaV_geNrPVMI' />
         <meta name='naver-site-verification' content='f01c4552dd70d2dbfddcc7400b30371edf57a16d' />
-        
       </Helmet>
 
       {/* 헤더 */}

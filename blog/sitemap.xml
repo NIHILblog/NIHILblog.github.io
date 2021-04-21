@@ -50,5 +50,4 @@
 <url> <loc>https://nihilblog.github.io/blog/notice/page/1</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://nihilblog.github.io/blog/about/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://nihilblog.github.io/blog/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
-<url> <loc>https://nihilblog.github.io/blog/view/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 </urlset>
