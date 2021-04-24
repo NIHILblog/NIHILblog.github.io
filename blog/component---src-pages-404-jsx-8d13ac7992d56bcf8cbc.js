@@ -1,2 +1,0 @@
-(self.webpackChunknihil_blog=self.webpackChunknihil_blog||[]).push([[256],{1657:function(e,l,n){"use strict";n.r(l);var t=n(7215),a=n(7294),r=n(3431),g={pageName:"에러 404",pageUrl:"/blog/404",pageType:"website"};l.default=function(){return(0,r.tZ)(a.Fragment,null,(0,r.tZ)(t.Z,g,(0,r.tZ)("div",{id:"blog-error-page"},(0,r.tZ)("h2",null,"에러 404"),(0,r.tZ)("img",{src:"/images/error-image.png",alt:""}),(0,r.tZ)("p",null,(0,r.tZ)("span",null,"페이지를 찾을 수 없습니다.")))))}}}]);
-//# sourceMappingURL=component---src-pages-404-jsx-8d13ac7992d56bcf8cbc.js.map
